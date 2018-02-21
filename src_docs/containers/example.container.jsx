@@ -16,7 +16,12 @@ export default () => (
       </a>
     </div>
     <div className="example-content oc-flex-column">
-      <ExampleView />
+      <div className="example-input-row oc-flex-row">
+        <span className="example-input-label">Select items:</span>
+        <div className="example-input-control">
+          <ExampleView />
+        </div>
+      </div>
     </div>
   </div>
 );
