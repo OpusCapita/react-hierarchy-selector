@@ -1,5 +1,4 @@
 import React from 'react';
-import { Panel, Grid, Row, Col } from 'react-bootstrap';
 import ExampleView from '../components/example-view.component';
 import GithubLogo from '../images/logo-github.svg';
 
