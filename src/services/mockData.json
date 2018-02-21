@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Company 1",
+    "children": [
+      {
+        "id": 11,
+        "name": "Asia",
+        "children": [
+          {
+            "id": 111,
+            "name": "FI12 1234 1234 1234 1234 12",
+            "children": []
+          },
+          {
+            "id": 112,
+            "name": "FI12 1234 1234 1234 1234 13",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Europe",
+        "children": [
+          {
+            "id": 113,
+            "name": "FI12 1234 1234 1234 1234 14",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Company 2",
+    "children": [
+      {
+        "id": 21,
+        "name": "Europe",
+        "children": [
+          {
+            "id": 211,
+            "name": "FI12 1234 1234 1234 1234 21",
+            "children": []
+          },
+          {
+            "id": 212,
+            "name": "FI12 1234 1234 1234 1234 22",
+            "children": []
+          },
+          {
+            "id": 213,
+            "name": "FI12 1234 1234 1234 1234 23",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

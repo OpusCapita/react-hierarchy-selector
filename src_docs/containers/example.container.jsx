@@ -1,6 +1,6 @@
 import React from 'react';
 import { Panel, Grid, Row, Col } from 'react-bootstrap';
-import ExampleComponent from '../components/example.component';
+import ExampleView from '../components/example-view.component';
 import GithubLogo from '../images/logo-github.svg';
 
 export default () => (
@@ -21,7 +21,7 @@ export default () => (
           </Col>
         </Row>
         <Panel>
-          <ExampleComponent />
+          <ExampleView />
         </Panel>
       </Col>
     </Row>

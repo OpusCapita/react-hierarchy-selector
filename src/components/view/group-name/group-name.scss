@@ -1,0 +1,31 @@
+@import "../../../../styles/colors";
+@import "../../../../styles/variables";
+
+$search-line-height: 3.2rem;
+$search-input-height: $search-line-height - 0.2rem;
+$selector-popover-padding: 0.5rem;
+
+.oc-hierarchy-selector-group-name-wrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: $oc-color-white;
+  padding: 0;
+  margin: 0 0 1.4rem 0;
+
+  input {
+    outline: none;
+    font-size: $oc-font-size-normal;
+    font-weight: $oc-font-weight-bold;
+    width: 100%;
+    height: $search-input-height;
+    line-height: $search-input-height;
+    margin: 0;
+    padding: 0 $selector-popover-padding;
+
+    &:focus {
+      border-color: #FECA1D;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(254,202,29,0.6);
+    }
+  }
+}
