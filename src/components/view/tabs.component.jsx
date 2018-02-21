@@ -8,7 +8,7 @@ import Utils from '../../utils';
 
 import './tabs.scss';
 
-export default class ViewTabs extends React.PureComponent {
+export default class ViewTabs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

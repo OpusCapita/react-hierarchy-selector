@@ -15,7 +15,7 @@ function defaultItemRenderFunction(item) {
   );
 }
 
-export default class ListItem extends React.PureComponent {
+export default class ListItem extends React.Component {
 
   shouldComponentUpdate(nextProps) {
     const { checked, checkDisabled, selected, item } = this.props;
