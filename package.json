@@ -34,7 +34,8 @@
   "peerDependencies": {
     "prop-types": "15.6.0",
     "react": "15 || 16",
-    "react-dom": "15 || 16"
+    "react-dom": "15 || 16",
+    "react-bootstrap": ">=0.31.3"
   },
   "devDependencies": {
     "autoprefixer": "8.0.0",
@@ -98,6 +99,10 @@
     "write-file-webpack-plugin": "4.2.0"
   },
   "dependencies": {
+    "@opuscapita/react-perfect-scrollbar": "3.0.0",
+    "@opuscapita/react-spinner": "1.1.1",
+    "classnames": "2.2.5",
+    "react-list": "0.8.8"
   },
   "repository": {
     "type": "git",
