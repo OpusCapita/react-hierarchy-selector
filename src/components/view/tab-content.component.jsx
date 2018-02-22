@@ -140,7 +140,7 @@ export default class ViewTabContent extends React.PureComponent {
     );
   };
 
-  getSpinner = () => <div className="oc-hierarchy-selector-tab-content"><Spinner /></div>;
+  getSpinner = () => <div className="oc-hierarchy-selector-tab-content"><Spinner delay={50} /></div>;
 
   clickHandler = (level, id) => {
     this.setState({

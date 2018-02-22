@@ -12,7 +12,7 @@ import HSView from '../view';
 import HSBadge from '../badge';
 
 
-import { TOOLTIP_DELAY_MS, MAX_COUNT_OF_TOOLTIP_ITEMS } from './constants';
+import { SPINNER_DELAY, TOOLTIP_DELAY_MS, MAX_COUNT_OF_TOOLTIP_ITEMS } from './constants';
 import './combo-box.scss';
 
 export default class HierarchySelectorComboBox extends React.PureComponent {
@@ -259,7 +259,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
           <div className="oc-hierarchy-selector-list">
             <input {...inputOptions} />
             {this.state.needToLoadData ?
-              <Spinner /> :
+              <Spinner delay={SPINNER_DELAY} /> :
               <HSBadge className="badge-orange">{this.getCountOfSelectedItems()}</HSBadge>
             }
             <button type="button" disabled={this.state.needToLoadData} className="oc-hierarchy-selector-list-btn" onClick={this.onClickHandler}><FaChevronDown /></button>

@@ -3,7 +3,7 @@
 import React from 'react';
 import { HierarchySelectorComboBox, HierarchySelectorDataSourceProvider } from '../../src';
 
-const TIMEOUT = 150;
+const TIMEOUT = 300;
 
 function getDataPromise() {
   return () => (
