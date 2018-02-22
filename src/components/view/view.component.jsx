@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unused-state */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
@@ -22,7 +24,6 @@ function getFirstCheckedItemHashList(lists) {
 }
 
 export default class HierarchySelectorView extends React.PureComponent {
-
   constructor(props) {
     super(props);
 
@@ -152,8 +153,8 @@ export default class HierarchySelectorView extends React.PureComponent {
     const allCheckedItems = this.getAllCheckedItems();
     const checkedOutput = this.getCheckedOutput();
 
-    this.props.onSelect(
-      this.state.groupName, allCheckedItems, checkedOutput);
+    this.props
+      .onSelect(this.state.groupName, allCheckedItems, checkedOutput);
   }
 
   checkListChangeHandler = (checkedItemHashList) => {

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unused-prop-types */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Spinner } from '@opuscapita/react-spinner';
@@ -33,7 +35,7 @@ export default class ViewTabContent extends React.PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
-    const isLoaded = nextProps.dataSourceProvider.isLoaded;
+    const { isLoaded } = nextProps.dataSourceProvider;
     const checked = nextProps.dataSourceProvider.getChecked();
 
     if (this.state.isDataLoaded !== isLoaded) {

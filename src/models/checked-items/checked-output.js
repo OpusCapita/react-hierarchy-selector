@@ -52,5 +52,4 @@ export default class CheckedOutput {
   clear = () => {
     output.get(this).splice(0);
   }
-
 }

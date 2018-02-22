@@ -30,7 +30,7 @@ function removeItem(list, parentIds, id) {
   const indexItem = dataIndex.getFromIndex(parentIds, id);
 
   if (indexItem) {
-    const parentHash = indexItem.parentHash;
+    const { parentHash } = indexItem;
 
     if (checkedItems[parentHash]) {
       checkedItems[parentHash].removeCheckedItem(indexItem.item);
@@ -66,7 +66,7 @@ function addItem(list, parentIds, id) {
   const indexItem = dataIndex.getFromIndex(parentIds, id);
 
   if (indexItem) {
-    const parentHash = indexItem.parentHash;
+    const { parentHash } = indexItem;
     const parents = dataIndex.getParents(indexItem);
 
     if (!checkedItems[parentHash]) checkedItems[parentHash] = new CheckedHashItem(parents);

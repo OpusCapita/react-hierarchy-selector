@@ -40,7 +40,7 @@ export default class ViewColumn extends React.PureComponent {
   }
 
   renderWrapperFunction = index => (item, defaultRenderFunction) =>
-      this.props.itemRenderFunction(index, item, defaultRenderFunction);
+    this.props.itemRenderFunction(index, item, defaultRenderFunction);
 
   render() {
     // TODO: 'All' text should be passed here to show translated text.

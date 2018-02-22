@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -6,7 +7,6 @@ import FaTrash from 'react-icons/lib/fa/trash';
 import { hierarchyItemShape } from '../../../types';
 
 export default class Item extends React.PureComponent {
-
   getRemoveIcon() {
     return this.props.removable ?
       <span className="component-icon clickable" onClick={this.removeClickHandler}>
@@ -20,7 +20,12 @@ export default class Item extends React.PureComponent {
   }
 
   removeClickHandler = (e) => {
-    const { onRemoveClick, item, sourceId, referenceIds } = this.props;
+    const {
+      onRemoveClick,
+      item,
+      sourceId,
+      referenceIds,
+    } = this.props;
     e.stopPropagation();
     onRemoveClick(sourceId, referenceIds.slice(), item.id);
   }

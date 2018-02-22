@@ -1,8 +1,9 @@
 import { KEYS, CLASS_NAME_SEARCH_FOCUSABLE } from './constants';
 
 function getFocusableFoundElements(target) {
-  return Array.prototype.slice.call(
-    target.getElementsByClassName(CLASS_NAME_SEARCH_FOCUSABLE));
+  return Array.prototype
+    .slice
+    .call(target.getElementsByClassName(CLASS_NAME_SEARCH_FOCUSABLE));
 }
 
 function calculateNewIndex(key, index, listLength) {
@@ -35,7 +36,7 @@ export default class EventHandler {
 
     if (allFoundItems.length === 0) return;
 
-    const activeElement = document.activeElement;
+    const { activeElement } = document;
     let index = allFoundItems.findIndex(i => i === activeElement);
     index = calculateNewIndex(key, index, allFoundItems.length);
 

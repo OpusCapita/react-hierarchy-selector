@@ -5,7 +5,6 @@ import PopoverFoundItems from './found-items.component';
 import { foundItemsShape } from '../../../types';
 
 export default class PopoverSearchContent extends React.PureComponent {
-
   getFoundItems = () => {
     const { foundItems } = this.props;
 

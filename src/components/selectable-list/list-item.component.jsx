@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -16,9 +17,13 @@ function defaultItemRenderFunction(item) {
 }
 
 export default class ListItem extends React.Component {
-
   shouldComponentUpdate(nextProps) {
-    const { checked, checkDisabled, selected, item } = this.props;
+    const {
+      checked,
+      checkDisabled,
+      selected,
+      item,
+    } = this.props;
 
     if (checked !== nextProps.checked) return true;
     if (checkDisabled !== nextProps.checkDisabled) return true;

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unused-state */
+
 import React from 'react';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 import PropTypes from 'prop-types';
@@ -119,16 +121,16 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
   onSelectedInPopover = (selectedItem) => {
     this.uncheckAllItems();
     const checkedOutput = selectedItem && Array.isArray(selectedItem.items) ?
-              selectedItem.items.map(item => ({
-                id: item.id,
-                name: item.name,
-                level: 0,
-                parentId: null,
-                parentIds: [],
-                isCheckedAll: false,
-                isChildren: false,
-              }))
-              : [];
+      selectedItem.items.map(item => ({
+        id: item.id,
+        name: item.name,
+        level: 0,
+        parentId: null,
+        parentIds: [],
+        isCheckedAll: false,
+        isChildren: false,
+      }))
+      : [];
     this.onSelectHandler(selectedItem, checkedOutput);
   }
 
@@ -144,7 +146,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
   getView = () => {
     const options = this.props.viewOptions;
     const preCheckedItems = Array.isArray(this.state.preCheckedItems) ?
-            this.state.preCheckedItems.slice() : null;
+      this.state.preCheckedItems.slice() : null;
 
     return (
       <HSView

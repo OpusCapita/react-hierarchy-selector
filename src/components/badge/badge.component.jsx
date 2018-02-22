@@ -6,10 +6,9 @@ import { Badge } from 'react-bootstrap';
 import './badge.scss';
 
 export default class HSBadge extends React.PureComponent {
-
-  getClassNames = className => (classnames(
-    'oc-hierarchy-selector-badge', className,
-  ));
+  getClassNames = className => (
+    classnames('oc-hierarchy-selector-badge', className)
+  );
 
   render() {
     const { className, ...other } = this.props;

@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -44,9 +45,11 @@ export default class SearchBar extends React.PureComponent {
     const icon = this.isSearchingForEmpty() ?
       <div className="search-component-icon"><FaSearch /></div>
       :
-      (<div className="search-component-icon clickable" onClick={this.onCloseHandler}>
-        <FaClose />
-      </div>);
+      (
+        <div className="search-component-icon clickable" onClick={this.onCloseHandler}>
+          <FaClose />
+        </div>
+      );
 
     return icon;
   }

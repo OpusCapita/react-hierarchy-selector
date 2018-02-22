@@ -8,7 +8,6 @@ import './selectable-list.scss';
 
 
 export default class SelectableList extends React.PureComponent {
-
   itemRenderer = (index, key) => {
     const { items, checkDisabled } = this.props;
     const item = items[index];
