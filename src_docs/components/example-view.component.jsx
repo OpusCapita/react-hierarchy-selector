@@ -2,36 +2,14 @@
 
 import React from 'react';
 import { HierarchySelectorComboBox, HierarchySelectorDataSourceProvider } from '../../src';
+import getData from './data';
 
-const TIMEOUT = 300;
+const TIMEOUT = 200;
 
 function getDataPromise() {
   return () => (
     new Promise(resolve => (
-      setTimeout(resolve, TIMEOUT, [
-        {
-          id: 1,
-          name: 'General companies',
-          children: [
-            {
-              id: 12,
-              name: 'Europe',
-              children: [
-                {
-                  id: 113,
-                  name: 'Company 1',
-                  children: [],
-                },
-                {
-                  id: 114,
-                  name: 'Company 2',
-                  children: [],
-                },
-              ],
-            },
-          ],
-        },
-      ])
+      setTimeout(resolve, TIMEOUT, getData())
     ))
   );
 }
