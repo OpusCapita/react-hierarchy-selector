@@ -3,6 +3,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactList from 'react-list';
+import FaCaretRight from 'react-icons/lib/fa/caret-right';
+import FaCaretDown from 'react-icons/lib/fa/caret-down';
 
 import { hierarchyItemListShape } from '../../../types';
 import { CLASS_NAME_SEARCH_FOCUSABLE } from '../constants';
@@ -60,10 +62,7 @@ export default class PopoverFoundItems extends React.PureComponent {
     );
   }
 
-  getIcon = () => {
-    const className = `fa fa-${this.state.collapsed ? 'caret-right' : 'caret-down'}`;
-    return <i className={className} />;
-  };
+  getIcon = () => (this.state.collapsed ? <FaCaretRight /> : <FaCaretDown />);
 
   selectItem = (key) => {
     this.props.onSelect(this.props.data[key]);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { Spinner } from '@opuscapita/react-spinner';
-
+import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 import { dataSourceProviderType } from '../../services/types';
 import { preCheckedItemsListShape, popoverOptionsType, viewOptionsType } from '../../types';
 import HSPopover from '../popover';
@@ -260,7 +260,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
               <Spinner /> :
               <HSBadge className="badge-orange">{this.getCountOfSelectedItems()}</HSBadge>
             }
-            <button type="button" disabled={this.state.needToLoadData} className="oc-hierarchy-selector-list-btn" onClick={this.onClickHandler}><i className="fa fa-chevron-down" /></button>
+            <button type="button" disabled={this.state.needToLoadData} className="oc-hierarchy-selector-list-btn" onClick={this.onClickHandler}><FaChevronDown /></button>
           </div>
         </OverlayTrigger>
         { this.state.isPopoverVisible ? this.getPopover() : null }

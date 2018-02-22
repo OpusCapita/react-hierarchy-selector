@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Button } from 'react-bootstrap';
+import FaQuestion from 'react-icons/lib/fa/question-circle';
 
 import './top-bar.scss';
 
@@ -17,7 +18,7 @@ export default class ViewTopBar extends React.PureComponent {
           </Button>
           <Button onClick={this.props.onCancel}>{this.props.btnCancelLabel}</Button>
           <button type="button" className="oc-help-button" onClick={this.props.onHelp}>
-            <i className="fa fa-question-circle" />
+            <FaQuestion />
           </button>
         </div>
       </div>

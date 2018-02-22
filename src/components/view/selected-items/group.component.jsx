@@ -2,7 +2,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import className from 'classnames';
+import FaTrash from 'react-icons/lib/fa/trash';
+import FaCaretRight from 'react-icons/lib/fa/caret-right';
+import FaCaretDown from 'react-icons/lib/fa/caret-down';
 
 import HSBadge from '../../badge';
 
@@ -14,19 +16,12 @@ export default class GroupItem extends React.PureComponent {
     };
   }
 
-  getIcon = () => {
-    const classes = className({
-      fa: true,
-      'fa-caret-down': !this.state.collapsed,
-      'fa-caret-right': this.state.collapsed,
-    });
-    return <i className={classes} />;
-  }
+  getIcon = () => (this.state.collapsed ? <FaCaretRight /> : <FaCaretDown />);
 
   getRemoveIcon() {
     return this.props.removable ?
       <span className="component-icon clickable" onClick={this.removeClickHandler}>
-        <i className="fa fa-trash" />
+        <FaTrash />
       </span>
       : null;
   }

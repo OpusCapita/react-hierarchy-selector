@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import FaTrash from 'react-icons/lib/fa/trash';
 import { hierarchyItemShape } from '../../../types';
 
 export default class Item extends React.PureComponent {
@@ -9,7 +10,7 @@ export default class Item extends React.PureComponent {
   getRemoveIcon() {
     return this.props.removable ?
       <span className="component-icon clickable" onClick={this.removeClickHandler}>
-        <i className="fa fa-trash-o" />
+        <FaTrash />
       </span>
       : null;
   }

@@ -4,6 +4,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { FormControl } from 'react-bootstrap';
+import FaSearch from 'react-icons/lib/fa/search';
+import FaClose from 'react-icons/lib/fa/close';
 
 import './search-bar.scss';
 
@@ -40,10 +42,10 @@ export default class SearchBar extends React.PureComponent {
 
   getIcon = () => {
     const icon = this.isSearchingForEmpty() ?
-      <div className="search-component-icon"><i className="fa fa-search" /></div>
+      <div className="search-component-icon"><FaSearch /></div>
       :
       (<div className="search-component-icon clickable" onClick={this.onCloseHandler}>
-        <i className="fa fa-times" />
+        <FaClose />
       </div>);
 
     return icon;

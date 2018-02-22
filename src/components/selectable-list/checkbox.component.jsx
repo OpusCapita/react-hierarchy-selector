@@ -2,7 +2,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import FaCheckSquareO from 'react-icons/lib/fa/check-square-o';
+import FaCheckSquare from 'react-icons/lib/fa/check-square';
+import FaSquareO from 'react-icons/lib/fa/square-o';
 
 export default class ItemCheckbox extends React.PureComponent {
   constructor(props) {
@@ -21,14 +23,14 @@ export default class ItemCheckbox extends React.PureComponent {
   }
 
   getIcon = () => {
-    const classes = classNames({
-      fa: true,
-      'fa-check-square-o': this.state.checked && this.props.disabled,
-      'fa-check-square': this.state.checked && !this.props.disabled,
-      'fa-square-o': !this.state.checked && !this.props.disabled,
-    });
+    let icon = null;
+    if (this.state.checked) {
+      icon = this.props.disabled ? <FaCheckSquareO /> : <FaCheckSquare />;
+    } else if (!this.state.checked && !this.props.disabled) {
+      icon = <FaSquareO />;
+    }
 
-    return <i className={classes} />;
+    return icon;
   }
 
   clickHandler = () => {

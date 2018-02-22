@@ -7,8 +7,6 @@ import ExampleContainer from './containers/example.container';
 import './app.component.scss';
 import './images/favicon.ico';
 
-require('font-awesome-sass-loader');
-
 const renderApp = (Component) => {
   render(
     <AppContainer>
