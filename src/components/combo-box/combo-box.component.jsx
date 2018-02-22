@@ -3,16 +3,16 @@
 import React from 'react';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { Spinner } from '@opuscapita/react-spinner';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 import { dataSourceProviderType } from '../../services/types';
 import { preCheckedItemsListShape, popoverOptionsType, viewOptionsType } from '../../types';
+import Spinner from '../spinner';
 import HSPopover from '../popover';
 import HSView from '../view';
 import HSBadge from '../badge';
 
 
-import { SPINNER_DELAY, TOOLTIP_DELAY_MS, MAX_COUNT_OF_TOOLTIP_ITEMS } from './constants';
+import { TOOLTIP_DELAY_MS, MAX_COUNT_OF_TOOLTIP_ITEMS } from './constants';
 import './combo-box.scss';
 
 export default class HierarchySelectorComboBox extends React.PureComponent {
@@ -259,7 +259,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
           <div className="oc-hierarchy-selector-list">
             <input {...inputOptions} />
             {this.state.needToLoadData ?
-              <Spinner delay={SPINNER_DELAY} /> :
+              <Spinner /> :
               <HSBadge className="badge-orange">{this.getCountOfSelectedItems()}</HSBadge>
             }
             <button type="button" disabled={this.state.needToLoadData} className="oc-hierarchy-selector-list-btn" onClick={this.onClickHandler}><FaChevronDown /></button>

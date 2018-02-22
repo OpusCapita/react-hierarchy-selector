@@ -2,8 +2,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Spinner } from '@opuscapita/react-spinner';
 
+import Spinner from '../spinner';
 import SearchBar from '../search-bar';
 import { dataSourceProviderType } from '../../services/types';
 import ColumnList from '../../models/column/column-list';
@@ -140,7 +140,7 @@ export default class ViewTabContent extends React.PureComponent {
     );
   };
 
-  getSpinner = () => <div className="oc-hierarchy-selector-tab-content"><Spinner delay={50} /></div>;
+  getSpinner = () => <div className="oc-hierarchy-selector-tab-content"><Spinner /></div>;
 
   clickHandler = (level, id) => {
     this.setState({

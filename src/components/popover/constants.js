@@ -3,4 +3,3 @@ export const KEYS = {
   UP: 38,
   DOWN: 40,
 };
-export const SPINNER_DELAY = 50;
