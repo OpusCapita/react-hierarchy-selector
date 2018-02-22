@@ -6,6 +6,14 @@ import getData from './data';
 
 const TIMEOUT = 200;
 
+const getPrechecked = () => (
+  [
+    { id: 521, parentId: 10, isCheckedAll: false },
+    { id: 525, parentId: 10, isCheckedAll: false },
+    { id: 2, isCheckedAll: true },
+  ]
+);
+
 function getDataPromise() {
   return () => (
     new Promise(resolve => (
@@ -21,7 +29,7 @@ export default class ExampleView extends React.PureComponent {
     this.state = {
       dataSourceProvider:
         new HierarchySelectorDataSourceProvider(getDataPromise()),
-      // dataSourceProviderPrecheckedItems: defaultPrechecked,
+      dataSourceProviderPrecheckedItems: getPrechecked(),
     };
   }
   render() {
@@ -36,8 +44,8 @@ export default class ExampleView extends React.PureComponent {
           pinnedGroupLabel: 'My item groups',
           recentGroupLabel: 'Recent item groups',
         }}
-        // preCheckedGroupName="Important items"
-        // preCheckedItems={this.state.dataSourceProviderPrecheckedItems}
+        preCheckedGroupName="Prechecked group"
+        preCheckedItems={this.state.dataSourceProviderPrecheckedItems}
         tooltipPlacement="bottom"
         viewOptions={{
           title: 'Select items',

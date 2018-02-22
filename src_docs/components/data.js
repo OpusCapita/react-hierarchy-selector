@@ -25,7 +25,7 @@ export default function getData() {
       getItem(10, 'EU', companiesEU),
       getItem(21, 'Others', companiesOthers),
     ]),
-    getItem(2, 'Some other groups', getItemList(5000, 1500, 'Other companies and units')),
+    getItem(2, 'Some other groups', getItemList(5000, 25, 'Other companies and units')),
   ];
 
   return general;
