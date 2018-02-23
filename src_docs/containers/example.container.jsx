@@ -1,4 +1,5 @@
 import React from 'react';
+import ExampleComboBox from '../components/example-combo-box.component';
 import ExampleView from '../components/example-view.component';
 import GithubLogo from '../images/logo-github.svg';
 
@@ -16,10 +17,21 @@ export default () => (
       </a>
     </div>
     <div className="example-content oc-flex-column">
-      <div className="example-input-row oc-flex-row">
+      <h4>Example of HierarchySelectorComboBox:</h4>
+      <div className="example-input-row w30 oc-flex-row">
         <span className="example-input-label">Select items:</span>
         <div className="example-input-control">
-          <ExampleView />
+          <ExampleComboBox />
+        </div>
+      </div>
+      <hr />
+      <h4>Example of HierarchySelectorView:</h4>
+      <div className="example-input-row w100 h100 oc-flex-row">
+        <span className="example-input-label">Select items:</span>
+        <div className="example-input-control">
+          <div className="example-view-wrapper">
+            <ExampleView />
+          </div>
         </div>
       </div>
     </div>
