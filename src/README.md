@@ -101,7 +101,7 @@ A structure of pre-checked items:
 
 `id`, `parentId` and `isCheckedAll` attributes are enough to define pre-checked items for the components. If `isCheckedAll` attribute is missed the components interpret this as `false` value. If `parentId` is `null`, it means that the item has no parent.
 
-In practice, you can pass, for example, the same structure as callback function `onSelect` returns back. The compoments will pay attention to id, parentId and isCheckedAll attributes only.
+In practice, you can pass, for example, the same structure as callback function `onSelect` returns. The compoments will pay attention to id, parentId and isCheckedAll attributes only.
 
 > <span style="color:#a00">The components (combo-box and view) pay attention to `id` and `parentId` while searching for pre-checked items. It means that Back-End _should return unique **parentId - id** combinations_ for all items of hierarchies while `id` of a particular item could be not unique.</span> 
 
@@ -123,9 +123,9 @@ groupNamePlaceHolder | string | | 'Please, fill a group name'	| A placeholder te
 listItemRenderFunction | function |  | null | A custom rendering function to render the last items in hierarchy differently than by default
 preCheckedItems | preCheckedItemsListShape | | null	| Defines pre-checked items for the view
 selectedItemListLabel |	string or element | | 'Selected items' | A label text of a selected items list
-selectedItemRenderFunction | function | | null | A custom rendering function to render selected list items differently than by default. The function has only one parameter that represents the current selected item for rendering. Otherwise it works the same way like listItemRenderFunction function
+selectedItemRenderFunction | function | | null | A custom rendering function to render selected list items differently than by default. The function has only one parameter that represents the current selected item for rendering. Otherwise it works the same way as listItemRenderFunction function
 showInModal | boolean | | true | Whether to show the component as a popup modal window or not (it uses a bootstrap modal component). When 'standalone' property = true, then the view will be rendered as a part of a page
-standalone | boolean | | false | Set to true, if the component used as a standalone component without HierarchySelectorComboBox. In this case some elements such GroupName component will be hidden.
+standalone | boolean | | false | Set to true, if the component used as a standalone component without HierarchySelectorComboBox. In this case, some elements such GroupName component will be hidden.
 title | string or element | | _&lt;empty string&gt;_ | A title of the component
 onCancel | function | |	_&lt;empty function&gt;_ | A callback function that is called when Cancel button of the component is clicked (Cancel button is visible only in a modal mode)
 onCheckListChanged | function | | _&lt;empty function&gt;_ | A callback function that is called every time user checked or unchecked an item(s)
@@ -135,7 +135,7 @@ onCheckListChanged | function | | _&lt;empty function&gt;_ | A callback function
 Here is a list of HierarchySelectorView callback functions.
 
 - __onCancel()__ &mdash; Function is called when a user press Cancel button (the button is visible only when HierarchySelectorView is not in standalone mode)
-- __onCheckListChanged(resultList)__ &mdash; Function is called everytime user check/uncheck items.
+- __onCheckListChanged(resultList)__ &mdash; Function is called every time user check/uncheck items.
   - Parameters: resultList (array) &mdash; contains information about items, that are checked through the list(s) of hierarchies items, including data source provider ID.
   - resultList example: 
 ```json
@@ -160,7 +160,7 @@ Here is a list of HierarchySelectorView callback functions.
       },
     ]
 ```
-A Level attribute's value starts from 1 (not zero-based). Property `parentIds` contains all parents of a chekced node. `parentId` contains only the closest parent id. If there is no parent the property contains `null` value.
+A Level attribute's value starts from 1 (not zero-based). Property `parentIds` contains all parents of a checked node. `parentId` contains only the closest parent id. If there is no parent the property contains `null` value.
 
 #### Styling
 
@@ -200,18 +200,18 @@ const dataSourceProvider = new HierarchySelectorDataSourceProvider(() => (
 
 ### HierarchySelectorComboBox
 
-This component looks like a combo-box and starts to load data after a user click on a down-arrow of a combo-box to open a popover window. However if there's _pre-checked data_ and initial data is not loaded the component starts to load initial data immediately to set pre-checked items.
+This component looks like a combo-box and starts to load data after a user click on a down-arrow of a combo-box to open a popover window. However, if there's _pre-checked data_ and initial data is not loaded the component starts to load initial data immediately to set pre-checked items.
 
 #### Properties
 
 Property name | Type | Required | Default value | Description
 ---|---|:---:|---|---
 dataSourceProvider | dataSourceProviderType |	yes | | Data provider for the component
-hideOnPopoverBlur | boolean | | true | The property defines whether a popover panel of this component should be closed on blur event. If true, then the popover will be closed afer blur event was triggered.
+hideOnPopoverBlur | boolean | | true | The property defines whether a popover panel of this component should be closed on blur event. If true, then the popover will be closed after blur event was triggered.
 inputName |	string | | _&lt;empty string&gt;_ | The property defines Name property of DOM input element that contains a group name of selected items.
 noSelectionText |	string | | 'No one selected...'	| The property defines a text that will appear in the combo box as a placeholder of an input element and in a tooltip when no one element was selected.
 popoverOptions | popoverOptionsType | yes | | Defines options for the popover panel of the combo box component (see popoverOptionsType for more information).
-popoverVisible | boolean | | false | Defines whether the popover panel shoud be opened from the start.
+popoverVisible | boolean | | false | Defines whether the popover panel should be opened from the start.
 preCheckedGroupName |	string | | Default group | Defines group name for pre-checked items (will be shown as a combo box text). If there are no pre-checked items this property is not used
 preCheckedItems |	preCheckedItemsListShape | | null |	Defines pre-checked items for the view
 tooltipPlacement | string | | 'bottom' | Defines a placement for a tooltip and should contain one of the values described for OverlayTrigger component of  React-Bootstrap framework (property placement)
@@ -296,4 +296,7 @@ Here is a list of types additional to JavaScript standard types:
 
 ## Code example
 
-For a usage see [example's source code](../src_docs/components/example-view.component.jsx)
+For a usage see example's source code: 
+
+- [HierarchySelectorView component](../src_docs/components/example-view.component.jsx)
+- [HierarchySelectorComboBox component](../src_docs/components/example-combo-box.component.jsx)
