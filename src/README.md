@@ -6,11 +6,20 @@ Hierarchy selector component is a component that can be useful for selecting ite
 
 ## Dependencies
 
+### Regular
+
 - @opuscapita/react-perfect-scrollbar
 - @opuscapita/react-spinner
 - classnames
 - react-icons
 - react-list
+
+### Peer dependencies
+
+- prop-types
+- react
+- react-dom
+- react-bootstrap
 
 ## Data structure
 
