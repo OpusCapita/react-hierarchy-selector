@@ -42,7 +42,6 @@ Hierarchy selector component expects data, for example, from a back-end to show 
       }
     ]
   },
-  ...
 ]
 ```
 
@@ -72,7 +71,6 @@ Here is a data structure that components `HierarchySelectorView` and `HierarchyS
      "isCheckedAll": false,
      "isChildren": false
    },
-   ...
 ]
 ```
 
@@ -89,7 +87,6 @@ A structure of pre-checked items:
       parentId: oneOfType([number, string]),
       isCheckedAll: bool,
     },
-    ...
 ]
 ```
 
@@ -152,7 +149,6 @@ Here is a list of HierarchySelectorView callback functions.
         "isCheckedAll": false,
         "isChildren": false
       },
-      ...
     ]
 ```
 A Level attribute's value starts from 1 (not zero-based). Property `parentIds` contains all parents of a chekced node. `parentId` contains only the closest parent id. If there is no parent the property contains `null` value.
@@ -231,7 +227,6 @@ Here is a list of HierarchySelectorComboBox callback functions.
         "isCheckedAll": true,
         "isChildren": true
       },
-      ...
     ]
 ```
 is the same as in `onCheckListChanged` callback function of View component. For an item that is selected from a popover the value of level attribute is 0 (zero).
@@ -292,4 +287,4 @@ Here is a list of types additional to JavaScript standard types:
 
 ## Code example
 
-For a usage example see [source code](../src_docs/components/example-view.component.jsx)
+For a usage see [example's source code](../src_docs/components/example-view.component.jsx)
