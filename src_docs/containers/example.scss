@@ -1,0 +1,56 @@
+@import '../styles/colors';
+
+.example-container {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.example-content {
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: $oc-color-white;
+}
+
+.example-git-logo {
+  margin-top: 2rem;
+  display: 'block';
+
+  span {
+    margin-left: 2rem;
+  }
+}
+
+.example-input-row {
+  &.w30 {
+    width: 30%;
+  }
+  &.w100 {
+    width: 100%;
+  }
+  &.h100 {
+    height: 100%;
+  }
+}
+
+.example-input-label {
+  min-width: 20rem;
+  line-height: 3rem;
+}
+
+.example-input-control {
+  width: 100%;
+  line-height: 3rem;
+}
+
+.example-view-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: $oc-color-white;
+  border: 1px solid $oc-color-support-gray;
+}

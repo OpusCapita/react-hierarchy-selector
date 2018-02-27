@@ -1,0 +1,56 @@
+.oc-hierarchy-selector-view {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  div {
+    min-height: 0;
+  }
+
+  .oc-hierarchy-selector-tabs {
+    display: flex;
+    width: 70%;
+    height: 100%;
+    padding: 0 1rem;
+  }
+
+  .oc-hierarchy-selector-selected-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 1rem;
+  }
+}
+
+.oc-hierarchy-selector-view-dialog {
+  width: 100%;
+  height: 90%;
+
+  &.modal-dialog {
+    width: 90%;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .modal-body {
+    display: flex;
+    height: 100%;
+    padding: 0;
+    min-height: 0;
+  }
+}
+
+.oc-span-devider {
+  padding: 0 0.5rem;
+}
+
+.oc-span-devider-double {
+  padding: 0 1rem;
+}

@@ -1,0 +1,14 @@
+@import "../../../styles/colors";
+
+$selector-line-height: 2rem;
+
+.badge.oc-hierarchy-selector-badge {
+  padding-top: 0;
+  padding-bottom: 0;
+  min-width: auto;
+  line-height: $selector-line-height;
+}
+
+.badge.badge-orange {
+  background-color: $oc-color-orange;
+}
