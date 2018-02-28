@@ -2,6 +2,8 @@
 
 **HierarchySelector** is a React component for selecting items from hierarchies.
 
+### [DEMO](https://opuscapita.github.io/react-hierarchy-selector/)
+
 ### [API](./src/README.md)
 
 ### Installation

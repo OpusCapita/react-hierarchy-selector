@@ -1,0 +1,73 @@
+@import "../../../styles/colors";
+
+$selector-line-height: 2rem;
+$selector-icon-width: 1.5rem;
+$selector-padding: 0.5rem;
+
+.oc-hierarchy-selector-list-wrapper {
+  display: inline-block;
+  min-width: 25rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.oc-hierarchy-selector-list {
+  display: flex;
+  width: 100%;
+  border: 1px solid $oc-color-support-gray;
+  line-height: $selector-line-height;
+  padding: $selector-padding;
+  overflow: hidden;
+
+  input {
+    outline: none;
+    width: 100%;
+    min-width: 0;
+    line-height: $selector-line-height;
+    margin: 0;
+    padding: 0 $selector-padding;
+    border: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;      
+  }
+
+  button:focus {
+    border: none;
+    box-shadow: none;
+  }
+
+  .oc-hierarchy-selector-list-btn {
+    outline: none;
+    cursor: pointer;
+    box-sizing: content-box;
+    display: block;
+    float: right;
+    height: $selector-line-height;
+    line-height: $selector-line-height;
+    padding: 0 $selector-padding;
+    background-color: $oc-color-white;
+    border: 0px solid transparent;
+    overflow: hidden;
+    color: $oc-color-text;
+
+    &:hover {
+      color: $oc-color-main;
+    }
+  }
+
+  .spinner {
+    position: relative !important;
+    left: 0 !important;
+    width: 1.2rem !important;
+    div {
+      width: 4px !important;
+    }
+  }
+}
+
+.hs-combo-box-tooltip {
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}

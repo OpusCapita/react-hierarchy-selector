@@ -1,0 +1,34 @@
+.oc-hierarchy-selector-column {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border: none;
+  width: 30rem;
+  height: 100%;
+
+  .checkbox {
+    margin: 0;
+
+    label {
+      height: 3rem;
+      line-height: 3rem;
+    }
+
+    input {
+      width: 1.5rem;
+      height: 3rem;
+      outline: none !important;
+      margin: 0 0 0 -2rem;
+      padding: 0;
+      background: #fff;
+    }
+  }
+}
+
+.oc-hierarchy-selector-column-all {
+  flex-shrink: 0;
+  height: 3rem;
+  line-height: 3rem;
+  width: 100%;
+  text-align: right;
+}
