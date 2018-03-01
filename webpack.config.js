@@ -5,10 +5,12 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 const flexbugs = require('postcss-flexbugs-fixes');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const libraryName = 'react-hierarchy-selector';
 
 const isProd = process.env.NODE_ENV === 'production';
+const isAnalyzer = process.env.BUILD_ENV === 'analyser';
 
 const PATHS = {
   root: __dirname,
@@ -119,6 +121,13 @@ const baseConfig = {
   },
   // Add your peer dependencies here to avoid bundling them to build
   externals: {
+    'prop-types': {
+      root: 'PropTypes',
+      commonjs2: 'prop-types',
+      commonjs: 'prop-types',
+      amd: 'prop-types',
+      umd: 'prop-types',
+    },
     react: {
       root: 'React',
       commonjs2: 'react',
@@ -133,6 +142,12 @@ const baseConfig = {
       amd: 'react-dom',
       umd: 'react-dom',
     },
+    'react-bootstrap': {
+      commonjs2: 'react-bootstrap',
+      commonjs: 'react-bootstrap',
+      amd: 'react-bootstrap',
+      umd: 'react-bootstrap',
+    },
   },
 };
 
@@ -140,7 +155,7 @@ const baseConfig = {
 * DEVELOPMENT CONFIG
 */
 const devConfig = {
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -151,7 +166,9 @@ const devConfig = {
     new webpack.NamedModulesPlugin(),
   ],
 };
-
+if (isAnalyzer) {
+  devConfig.plugins.push(new BundleAnalyzerPlugin());
+}
 /*
 * PRODUCTION CONFIG
 */
