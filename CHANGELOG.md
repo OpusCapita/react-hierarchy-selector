@@ -4,6 +4,8 @@
 
 ## next
 
+* Removed pinned and recently used lists from Popover component as unused and not-yet-implemented
+* Fixed a style of selected item
 * Added babel-polyfill for DEMO
 
 ## 1.1.0
