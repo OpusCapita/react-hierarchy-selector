@@ -12,8 +12,6 @@ import CommonLayout from './layouts/common.layout';
 import SpinnerLayout from './layouts/spinner.layout';
 import HSSelectButton from './select-btn.component';
 import PopoverSearchContent from './search/search-content.component';
-import HSPinnedList from './pinned-list.component';
-import HSRecentList from './recent-list.component';
 import EventHandler from './event-handlers';
 import { CLASS_NAME_SEARCH_FOCUSABLE } from './constants';
 import SearchBar from '../search-bar';
@@ -87,10 +85,6 @@ export default class HierarchySelectorPopover extends React.PureComponent {
   getLists = () => (
     <div>
       <HSSelectButton label={this.props.btnOpenViewLabel} onClick={this.props.onShouldOpenView} />
-      <hr />
-      <HSPinnedList pinnedGroupLabel={this.props.pinnedGroupLabel} />
-      <hr />
-      <HSRecentList recentGroupLabel={this.props.recentGroupLabel} />
     </div>
   );
 
@@ -134,8 +128,6 @@ HierarchySelectorPopover.propTypes = {
   onShouldClosePopover: PropTypes.func,
   btnOpenViewLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   searchPlaceHolder: PropTypes.string,
-  pinnedGroupLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  recentGroupLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 HierarchySelectorPopover.defaultProps = {
@@ -145,6 +137,4 @@ HierarchySelectorPopover.defaultProps = {
   onShouldClosePopover: () => {},
   btnOpenViewLabel: 'Select...',
   searchPlaceHolder: 'Search...',
-  pinnedGroupLabel: 'Pinned items',
-  recentGroupLabel: 'Recently used',
 };
