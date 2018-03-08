@@ -24,6 +24,7 @@ const PATHS = {
 const baseConfig = {
   context: PATHS.context,
   entry: [
+    'babel-polyfill',
     PATHS.entry,
   ],
   output: {
