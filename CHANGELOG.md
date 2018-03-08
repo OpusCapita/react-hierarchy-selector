@@ -2,7 +2,7 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
-## next
+## 1.2.0
 
 * Removed pinned and recently used lists from Popover component as unused and not-yet-implemented
 * Fixed a style of selected item
