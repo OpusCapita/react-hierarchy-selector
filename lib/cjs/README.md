@@ -8,7 +8,6 @@ Hierarchy selector component is a component that can be useful for selecting ite
 
 ### Regular
 
-- @opuscapita/oc-cm-common-styles
 - @opuscapita/react-perfect-scrollbar
 - @opuscapita/react-spinner
 - classnames
