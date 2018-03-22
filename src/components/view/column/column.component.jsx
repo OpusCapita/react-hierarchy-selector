@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox } from 'react-bootstrap';
+import Checkbox from '@opuscapita/react-checkbox';
 import PropTypes from 'prop-types';
 
 import SelectableList from '../../selectable-list';
@@ -52,10 +52,9 @@ export default class ViewColumn extends React.PureComponent {
             <Checkbox
               onChange={this.checkAllHandler}
               checked={this.state.checkedAll}
+              label={this.props.allLabel}
               {...disabledProperty}
-            >
-              {this.props.allLabel}
-            </Checkbox>
+            />
             : null
           }
         </div>
