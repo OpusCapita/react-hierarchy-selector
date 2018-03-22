@@ -2,6 +2,11 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
+## 1.2.1
+
+* Styles from @opuscapita/oc-cm-common-styles
+* Checkbox from @opuscapita/react-checkbox
+
 ## 1.2.0
 
 * Removed pinned and recently used lists from Popover component as unused and not-yet-implemented
