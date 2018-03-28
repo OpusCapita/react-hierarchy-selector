@@ -103,7 +103,7 @@
   },
   "dependencies": {
     "@opuscapita/oc-cm-common-styles": "2.0.4",
-    "@opuscapita/react-checkbox": "1.0.0",
+    "@opuscapita/react-checkbox": "1.1.1",
     "@opuscapita/react-perfect-scrollbar": "3.0.0",
     "@opuscapita/react-spinner": "1.1.1",
     "classnames": "2.2.5",
