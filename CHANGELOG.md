@@ -2,6 +2,10 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
+# 1.2.2
+
+* Updated @opuscapita/react-checkbox version
+
 ## 1.2.1
 
 * Styles from @opuscapita/oc-cm-common-styles
