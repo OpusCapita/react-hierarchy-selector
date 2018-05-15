@@ -19,7 +19,13 @@ export default () => (
     <div className="example-content oc-flex-column">
       <h4>Example of HierarchySelectorComboBox:</h4>
       <div className="example-input-row w30 oc-flex-row">
-        <span className="example-input-label">Select items:</span>
+        <span className="example-input-label">Select items (prechecked):</span>
+        <div className="example-input-control">
+          <ExampleComboBox usePrechecked />
+        </div>
+      </div>
+      <div className="example-input-row w30 oc-flex-row">
+        <span className="example-input-label">Select items (empty):</span>
         <div className="example-input-control">
           <ExampleComboBox />
         </div>
