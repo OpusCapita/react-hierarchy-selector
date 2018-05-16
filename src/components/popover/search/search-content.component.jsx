@@ -20,6 +20,7 @@ export default class PopoverSearchContent extends React.PureComponent {
               groupName={foundItems[key].name}
               data={foundItems[key].items}
               onSelect={data => this.props.onSelect(data)}
+              itemRenderFunction={this.props.itemRenderFunction}
             />
           ))}
         </ul>
@@ -44,6 +45,7 @@ export default class PopoverSearchContent extends React.PureComponent {
 
 PopoverSearchContent.propTypes = {
   onSelect: PropTypes.func,
+  itemRenderFunction: PropTypes.func,
   foundItems: foundItemsShape,
   noMatchesLabel: PropTypes.string,
   tooMuchMatchesLabel: PropTypes.string,
@@ -51,6 +53,7 @@ PopoverSearchContent.propTypes = {
 
 PopoverSearchContent.defaultProps = {
   onSelect: () => {},
+  itemRenderFunction: null,
   foundItems: [],
   noMatchesLabel: 'No matches',
   tooMuchMatchesLabel: 'Too much matches found, refine search.',

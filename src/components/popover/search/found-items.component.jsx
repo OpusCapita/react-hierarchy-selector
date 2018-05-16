@@ -12,6 +12,14 @@ import FaCaretDown from 'react-icons/lib/fa/caret-down';
 import { hierarchyItemListShape } from '../../../types';
 import { CLASS_NAME_SEARCH_FOCUSABLE } from '../constants';
 
+function defaultItemRenderFunction(item) {
+  return (
+    <span>
+      {item.name}
+    </span>
+  );
+}
+
 export default class PopoverFoundItems extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -50,7 +58,10 @@ export default class PopoverFoundItems extends React.PureComponent {
           onKeyDown={e => this.onEnterPressed(e, index)}
           onClick={e => this.onClickHanlder(e, index)}
         >
-          {item.name}
+          {this.props.itemRenderFunction ?
+            this.props.itemRenderFunction(item, defaultItemRenderFunction) :
+            defaultItemRenderFunction(item)
+          }
         </div>
       );
     };
@@ -92,9 +103,11 @@ PopoverFoundItems.propTypes = {
   onSelect: PropTypes.func,
   groupName: PropTypes.string.isRequired,
   data: hierarchyItemListShape,
+  itemRenderFunction: PropTypes.func,
 };
 
 PopoverFoundItems.defaultProps = {
   onSelect: () => {},
   data: [],
+  itemRenderFunction: null,
 };
