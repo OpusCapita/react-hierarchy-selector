@@ -2,7 +2,12 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
-# 1.2.2
+## next
+
+* Added a new parameter `groupName` to onSelect event handler of HierarchySelectorComboBox component
+* Added an empty combo-box element without prechecked items to DEMO page
+
+## 1.2.2
 
 * Updated @opuscapita/react-checkbox version
 
