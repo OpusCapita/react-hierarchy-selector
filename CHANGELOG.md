@@ -4,6 +4,8 @@
 
 ## next
 
+## 1.3.2
+
 * Added a new parameter `groupName` to onSelect event handler of HierarchySelectorComboBox component
 * Added an empty combo-box element without prechecked items to DEMO page
 
