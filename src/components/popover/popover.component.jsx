@@ -96,6 +96,7 @@ export default class HierarchySelectorPopover extends React.PureComponent {
       <PopoverSearchContent
         foundItems={foundItems}
         onSelect={data => this.onSelectHandler(data)}
+        itemRenderFunction={this.props.foundItemRenderFunction}
       />
     );
   }
@@ -125,6 +126,7 @@ HierarchySelectorPopover.propTypes = {
   onComponentBlur: PropTypes.func,
   onSelect: PropTypes.func,
   onShouldOpenView: PropTypes.func,
+  foundItemRenderFunction: PropTypes.func,
   onShouldClosePopover: PropTypes.func,
   btnOpenViewLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   searchPlaceHolder: PropTypes.string,
@@ -135,6 +137,7 @@ HierarchySelectorPopover.defaultProps = {
   onSelect: () => {},
   onShouldOpenView: () => {},
   onShouldClosePopover: () => {},
+  foundItemRenderFunction: null,
   btnOpenViewLabel: 'Select...',
   searchPlaceHolder: 'Search...',
 };
