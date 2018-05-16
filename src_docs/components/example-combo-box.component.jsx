@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { HierarchySelectorComboBox, HierarchySelectorDataSourceProvider } from '../../src';
 import getData from './data';
 
@@ -22,20 +23,40 @@ function getDataPromise() {
   );
 }
 
-export default class ExampleView extends React.PureComponent {
+export default class ExampleComboBox extends React.PureComponent {
+  static propTypes = {
+    usePrechecked: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    usePrechecked: false,
+  }
+
   constructor(props) {
     super(props);
 
     this.state = {
       dataSourceProvider:
         new HierarchySelectorDataSourceProvider(getDataPromise()),
-      dataSourceProviderPrecheckedItems: getPrechecked(),
+      dataSourceProviderPrecheckedItems: props.usePrechecked ? getPrechecked() : null,
     };
   }
+
   render() {
+    const { usePrechecked } = this.props;
+    const { dataSourceProvider, dataSourceProviderPrecheckedItems } = this.state;
+    let precheckedOptions = {};
+
+    if (usePrechecked) {
+      precheckedOptions = {
+        preCheckedGroupName: 'Prechecked group',
+        preCheckedItems: dataSourceProviderPrecheckedItems,
+      };
+    }
+
     return (
       <HierarchySelectorComboBox
-        dataSourceProvider={this.state.dataSourceProvider}
+        dataSourceProvider={dataSourceProvider}
         hideOnPopoverBlur={false}
         popoverVisible={false}
         popoverOptions={{
@@ -44,8 +65,6 @@ export default class ExampleView extends React.PureComponent {
           pinnedGroupLabel: 'My item groups',
           recentGroupLabel: 'Recent item groups',
         }}
-        preCheckedGroupName="Prechecked group"
-        preCheckedItems={this.state.dataSourceProviderPrecheckedItems}
         tooltipPlacement="bottom"
         viewOptions={{
           title: 'Select items',
@@ -56,9 +75,10 @@ export default class ExampleView extends React.PureComponent {
           selectedItemListLabel: 'Selected items',
           listItemRenderFunction: this.listItemRenderFunction,
         }}
-        onSelect={(selectedItems) => {
-          console.log(selectedItems);
+        onSelect={(selectedItems, groupName) => {
+          console.log(groupName, selectedItems);
         }}
+        {...precheckedOptions}
       />
     );
   }

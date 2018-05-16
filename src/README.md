@@ -223,8 +223,8 @@ onSelect | function | |	_&lt;empty function&gt;_ | A callback function that is c
 
 Here is a list of HierarchySelectorComboBox callback functions.
 
-- __onSelect (items)__ &mdash; Function is called when a user has selected items in the popover panel or in HierarchySelectorView component.
-  - Parameter `items` - contains information about items, that were selected in the popover panel or in HierarchySelectorView component
+- __onSelect (items, groupName)__ &mdash; Function is called when a user has selected items in the popover panel or in HierarchySelectorView component.
+  - Parameter `items` is an array and contains information about items, that were selected in the popover panel or in HierarchySelectorView component
   - Data structure of `items` parameter:
 ```json
     [
@@ -240,6 +240,7 @@ Here is a list of HierarchySelectorComboBox callback functions.
     ]
 ```
 is the same as in `onCheckListChanged` callback function of View component. For an item that is selected from a popover the value of level attribute is 0 (zero).
+  - Parameter `groupName` is a string that contains a group name user entered in a group name field of HierarchySelectorView component 
 
 ## Types
 
