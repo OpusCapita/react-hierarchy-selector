@@ -28,6 +28,7 @@ const preCheckedItemsListShape = arrayOf(preCheckedItemsShape);
 
 const popoverOptionsType = shape({
   btnOpenViewLabel: oneOfType([string, element]),
+  foundItemRenderFunction: func,
   searchPlaceHolder: string,
   pinnedGroupLabel: oneOfType([string, element]),
   recentGroupLabel: oneOfType([string, element]),

@@ -50,7 +50,10 @@ export default class PopoverFoundItems extends React.PureComponent {
           onKeyDown={e => this.onEnterPressed(e, index)}
           onClick={e => this.onClickHanlder(e, index)}
         >
-          {item.name}
+          {this.props.itemRenderFunction ?
+            this.props.itemRenderFunction(item, this.defaultItemRenderFunction) :
+            this.defaultItemRenderFunction(item)
+          }
         </div>
       );
     };
@@ -66,6 +69,8 @@ export default class PopoverFoundItems extends React.PureComponent {
   }
 
   getIcon = () => (this.state.collapsed ? <FaCaretRight /> : <FaCaretDown />);
+
+  defaultItemRenderFunction = item => (<span>{item.name}</span>); 
 
   selectItem = (key) => {
     this.props.onSelect(this.props.data[key]);
@@ -92,9 +97,11 @@ PopoverFoundItems.propTypes = {
   onSelect: PropTypes.func,
   groupName: PropTypes.string.isRequired,
   data: hierarchyItemListShape,
+  itemRenderFunction: PropTypes.func,
 };
 
 PopoverFoundItems.defaultProps = {
   onSelect: () => {},
   data: [],
+  itemRenderFunction: null,
 };
