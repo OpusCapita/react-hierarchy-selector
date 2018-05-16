@@ -261,6 +261,7 @@ Here is a list of types additional to JavaScript standard types:
 ```
   {
     btnOpenViewLabel: oneOfType([string, element]),
+    foundItemRenderFunction: func,
     searchPlaceHolder: string,
     pinnedGroupLabel: oneOfType([string, element]),
     recentGroupLabel: oneOfType([string, element]),    
