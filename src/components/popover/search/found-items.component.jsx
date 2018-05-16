@@ -70,7 +70,7 @@ export default class PopoverFoundItems extends React.PureComponent {
 
   getIcon = () => (this.state.collapsed ? <FaCaretRight /> : <FaCaretDown />);
 
-  defaultItemRenderFunction = item => (<span>{item.name}</span>); 
+  defaultItemRenderFunction = item => (<span>{item.name}</span>);
 
   selectItem = (key) => {
     this.props.onSelect(this.props.data[key]);
