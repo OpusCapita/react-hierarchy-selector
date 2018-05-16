@@ -4,6 +4,8 @@
 
 ## next
 
+## 1.4.2
+
 * Added a new prop `foundItemRenderFunction` for Popover component of HierarchySelectorComboBox component
 
 ## 1.3.2

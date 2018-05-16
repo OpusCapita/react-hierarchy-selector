@@ -258,9 +258,17 @@ Here is a list of types additional to JavaScript standard types:
   }
 ```
 - __popoverOptionsType:__ 
+Property name | Type | Required | Default value | Description
+---|---|:---:|---|---
+btnOpenViewLabel|string or element||'Select...'|A text of open button of the component
+foundItemRenderFunction|function||null|A custom rendering function to render the found items in hierarchy differently than by default
+searchPlaceHolder|string or element||'Search...'|A text of Search placeholder of the component
+pinnedGroupLabel|string or element||'Pinned items'|A text of Pinned items
+recentGroupLabel|string or element||'Recently used'|A text of Recent group
 ```
   {
     btnOpenViewLabel: oneOfType([string, element]),
+    foundItemRenderFunction: func,
     searchPlaceHolder: string,
     pinnedGroupLabel: oneOfType([string, element]),
     recentGroupLabel: oneOfType([string, element]),    
