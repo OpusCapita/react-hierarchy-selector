@@ -1,5 +1,4 @@
 import BaseModel from './base';
-import ItemEntity from './item.entity';
 import GroupEntity from './group.entity';
 
 import Utils from '../utils';
@@ -13,7 +12,7 @@ const findFromHierarchy = (data, searchingFor, foundData = {}, groupNames = []) 
 
   if (data) {
     Object.keys(data).forEach((key) => {
-      const currentItem = new ItemEntity(data[key]);
+      const currentItem = Object.assign({}, data[key]);
       const isChildren = currentItem.children &&
                         Array.isArray(currentItem.children) &&
                         currentItem.children.length > 0;
@@ -65,7 +64,6 @@ function filter(data, searchingFor) {
 export default class Search extends BaseModel {
   getFoundFromHierarchy = (searchingFor) => {
     if (!this.dataSourceProvider.isLoaded || !this.dataSourceProvider.isData) return null;
-
     return Utils.HashToArray(findFromHierarchy(this.dataSourceProvider.getData(), searchingFor));
   };
 

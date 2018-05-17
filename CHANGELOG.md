@@ -4,6 +4,8 @@
 
 ## next
 
+* Copied found object as such to search result in order to enable custom format
+
 ## 1.4.0
 
 * Added a new prop `foundItemRenderFunction` for Popover component of HierarchySelectorComboBox component
