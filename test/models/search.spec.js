@@ -7,7 +7,6 @@ import getData from '../data';
 import { HierarchySelectorDataSourceProvider } from '../../src';
 import Search from '../../src/models/search';
 import GroupEntity from '../../src/models/group.entity';
-import ItemEntity from '../../src/models/item.entity';
 
 const provider = new HierarchySelectorDataSourceProvider(() => (
   new Promise((resolve) => {
@@ -38,7 +37,6 @@ describe('Search model', function () {
     expect(items.length).to.equal(1);
 
     const item = items[0];
-    expect(item).to.be.instanceof(ItemEntity);
     expect(item).to.include({ id: 502, name: 'Company EU 502' });
   });
   it('Search works', function () {

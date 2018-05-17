@@ -4,6 +4,8 @@
 
 ## next
 
+## 1.4.1
+
 * Copied found object as such to search result in order to enable custom format
 
 ## 1.4.0
