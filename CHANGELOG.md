@@ -4,6 +4,7 @@
 
 ## next
 * Added helpDisabled property to define, whethet Help-button is visible or not in top-bar
+* Added onHelp event
 
 ## 1.4.1
 
