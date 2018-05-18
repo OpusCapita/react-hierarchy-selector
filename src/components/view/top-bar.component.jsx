@@ -7,17 +7,27 @@ import './top-bar.scss';
 
 export default class ViewTopBar extends React.PureComponent {
   render() {
+    const {
+      title,
+      onCancel,
+      onSelect,
+      onHelp,
+      selectDisabled,
+      btnSelectLabel,
+      btnCancelLabel,
+      helpDisabled
+    } = this.props;
     return (
       <div className="oc-dialog-top-bar">
         <div className="action-left">
-          <Modal.Title>{ this.props.title }</Modal.Title>
+          <Modal.Title>{ title }</Modal.Title>
         </div>
         <div className="action-right">
-          <Button onClick={this.props.onSelect} disabled={this.props.selectDisabled}>
-            {this.props.btnSelectLabel}
+          <Button onClick={onSelect} disabled={selectDisabled}>
+            {btnSelectLabel}
           </Button>
-          <Button onClick={this.props.onCancel}>{this.props.btnCancelLabel}</Button>
-          <button type="button" className="oc-help-button" onClick={this.props.onHelp}>
+          <Button onClick={onCancel}>{btnCancelLabel}</Button>
+          <button type="button" className={`oc-help-button${helpDisabled ? '-disabled' : ''}`} onClick={onHelp}>
             <FaQuestion />
           </button>
         </div>
@@ -30,6 +40,7 @@ ViewTopBar.propTypes = {
   onCancel: PropTypes.func,
   onSelect: PropTypes.func,
   onHelp: PropTypes.func,
+  helpDisabled: PropTypes.bool.isRequired,
   selectDisabled: PropTypes.bool.isRequired,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   btnSelectLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),

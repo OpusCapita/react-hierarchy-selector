@@ -30,6 +30,12 @@ export default () => (
           <ExampleComboBox />
         </div>
       </div>
+      <div className="example-input-row w30 oc-flex-row">
+        <span className="example-input-label">Select items (helpEnabled):</span>
+        <div className="example-input-control">
+          <ExampleComboBox helpEnabled />
+        </div>
+      </div>
       <hr />
       <h4>Example of HierarchySelectorView:</h4>
       <div className="example-input-row w100 h100 oc-flex-row">

@@ -130,6 +130,8 @@ standalone | boolean | | false | Set to true, if the component used as a standal
 title | string or element | | _&lt;empty string&gt;_ | A title of the component
 onCancel | function | |	_&lt;empty function&gt;_ | A callback function that is called when Cancel button of the component is clicked (Cancel button is visible only in a modal mode)
 onCheckListChanged | function | | _&lt;empty function&gt;_ | A callback function that is called every time user checked or unchecked an item(s)
+onHelp | function | | _&lt;empty function&gt;_ | A callback function that is called when Help button of the component is clicked (Help button is visible only in a modal mode)
+helpDisabled | boolean | | true | Whether to show Help button in top bar of modal mode. Affects only to the visibility of Help button
 
 #### Callback functions
 
