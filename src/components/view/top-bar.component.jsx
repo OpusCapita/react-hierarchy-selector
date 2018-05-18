@@ -15,7 +15,7 @@ export default class ViewTopBar extends React.PureComponent {
       selectDisabled,
       btnSelectLabel,
       btnCancelLabel,
-      helpDisabled
+      helpDisabled,
     } = this.props;
     return (
       <div className="oc-dialog-top-bar">

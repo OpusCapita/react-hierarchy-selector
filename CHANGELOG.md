@@ -1,8 +1,9 @@
 # Changelog
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
-
 ## next
+
+## 1.4.2
 * Added helpDisabled property to define, whethet Help-button is visible or not in top-bar
 * Added onHelp event
 
