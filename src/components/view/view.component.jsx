@@ -206,8 +206,10 @@ export default class HierarchySelectorView extends React.PureComponent {
           title={this.props.title}
           onCancel={this.cancelHandler}
           onSelect={this.selectHandler}
+          onHelp={this.props.onHelp}
           btnSelectLabel={this.props.btnSelectLabel}
           btnCancelLabel={this.props.btnCancelLabel}
+          helpDisabled={this.props.helpDisabled}
         />
       </Modal.Header>
       <Modal.Body>
@@ -226,6 +228,7 @@ HierarchySelectorView.propTypes = {
   onCancel: PropTypes.func,
   onCheckListChanged: PropTypes.func,
   onSelect: PropTypes.func,
+  onHelp: PropTypes.func,
   showInModal: PropTypes.bool,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   allLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
@@ -240,12 +243,14 @@ HierarchySelectorView.propTypes = {
   selectedItemListLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   selectedItemRenderFunction: PropTypes.func,
   standalone: PropTypes.bool,
+  helpDisabled: PropTypes.bool,
 };
 
 HierarchySelectorView.defaultProps = {
   onCancel: () => {},
   onCheckListChanged: () => {},
   onSelect: () => {},
+  onHelp: () => {},
   showInModal: true,
   allLabel: 'All',
   btnSelectLabel: 'Select',
@@ -260,4 +265,5 @@ HierarchySelectorView.defaultProps = {
   selectedItemRenderFunction: null,
   standalone: false,
   title: '',
+  helpDisabled: true,
 };
