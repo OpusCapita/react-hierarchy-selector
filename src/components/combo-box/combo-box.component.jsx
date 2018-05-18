@@ -154,6 +154,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
         {...options}
         onCancel={this.onCanceledView}
         onSelect={this.onSelectedInView}
+        onHelp={this.props.onHelp}
         groupName={this.state.selected ? this.state.selected.name : ''}
         preCheckedItems={preCheckedItems}
       />
@@ -284,6 +285,7 @@ HierarchySelectorComboBox.propTypes = {
   tooltipPlacement: PropTypes.string,
   viewOptions: viewOptionsType.isRequired,
   onSelect: PropTypes.func,
+  onHelp: PropTypes.func,
 };
 
 HierarchySelectorComboBox.defaultProps = {
@@ -295,4 +297,5 @@ HierarchySelectorComboBox.defaultProps = {
   preCheckedGroupName: 'Default group',
   tooltipPlacement: 'bottom',
   onSelect: () => {},
+  onHelp: () => {},
 };

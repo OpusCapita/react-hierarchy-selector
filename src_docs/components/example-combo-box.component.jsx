@@ -26,10 +26,12 @@ function getDataPromise() {
 export default class ExampleComboBox extends React.PureComponent {
   static propTypes = {
     usePrechecked: PropTypes.bool,
+    helpEnabled: PropTypes.bool,
   }
 
   static defaultProps = {
     usePrechecked: false,
+    helpEnabled: false,
   }
 
   constructor(props) {
@@ -43,14 +45,21 @@ export default class ExampleComboBox extends React.PureComponent {
   }
 
   render() {
-    const { usePrechecked } = this.props;
+    const { usePrechecked, helpEnabled } = this.props;
     const { dataSourceProvider, dataSourceProviderPrecheckedItems } = this.state;
     let precheckedOptions = {};
+    let helpOptions = {};
 
     if (usePrechecked) {
       precheckedOptions = {
         preCheckedGroupName: 'Prechecked group',
         preCheckedItems: dataSourceProviderPrecheckedItems,
+      };
+    }
+
+    if (helpEnabled) {
+      helpOptions = {
+        onHelp: () => { alert('Help is on the way'); }, // eslint-disable-line no-alert
       };
     }
 
@@ -74,11 +83,13 @@ export default class ExampleComboBox extends React.PureComponent {
           groupNamePlaceHolder: 'Please, fill an item group name',
           selectedItemListLabel: 'Selected items',
           listItemRenderFunction: this.listItemRenderFunction,
+          helpDisabled: !helpEnabled,
         }}
         onSelect={(selectedItems, groupName) => {
           console.log(groupName, selectedItems);
         }}
         {...precheckedOptions}
+        {...helpOptions}
       />
     );
   }
