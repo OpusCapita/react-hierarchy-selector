@@ -220,6 +220,7 @@ preCheckedItems |	preCheckedItemsListShape | | null |	Defines pre-checked items 
 tooltipPlacement | string | | 'bottom' | Defines a placement for a tooltip and should contain one of the values described for OverlayTrigger component of  React-Bootstrap framework (property placement)
 viewOptions | viewOptionsType |	yes	| | Defines options for the HierarchySelectorView component (see viewOptionsType and HierarchySelectorView for more information).
 onSelect | function | |	_&lt;empty function&gt;_ | A callback function that is called when user has selected items in the popover panel or in HierarchySelectorView component.
+tooltipItemRenderFunction | function | | null | A custom rendering function to render tooltip list items differently than by default. The function has two parameters: first represents the current selected item for rendering and second one key attribute for item.
 
 #### Callback functions
 
@@ -260,13 +261,15 @@ Here is a list of types additional to JavaScript standard types:
   }
 ```
 - __popoverOptionsType:__ 
+
 Property name | Type | Required | Default value | Description
 ---|---|:---:|---|---
-btnOpenViewLabel|string or element||'Select...'|A text of open button of the component
-foundItemRenderFunction|function||null|A custom rendering function to render the found items in hierarchy differently than by default
-searchPlaceHolder|string or element||'Search...'|A text of Search placeholder of the component
-pinnedGroupLabel|string or element||'Pinned items'|A text of Pinned items
-recentGroupLabel|string or element||'Recently used'|A text of Recent group
+btnOpenViewLabel | string or element | | 'Select...' | A text of open button of the component
+foundItemRenderFunction | function | | null | A custom rendering function to render the found items in hierarchy differently than by default
+searchPlaceHolder | string or element | | 'Search...' | A text of Search placeholder of the component
+pinnedGroupLabel | string or element | | 'Pinned items' | A text of Pinned items
+recentGroupLabel | string or element | | 'Recently used' | A text of Recent group
+
 ```
   {
     btnOpenViewLabel: oneOfType([string, element]),
