@@ -4,6 +4,8 @@
 
 ## next
 
+# 1.5.0
+
 * Added a new prop `tooltipItemRenderFunction` for HierarchySelectorComboBox component 
 
 ## 1.4.2
