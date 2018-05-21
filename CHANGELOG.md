@@ -1,7 +1,10 @@
 # Changelog
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
+
 ## next
+
+* Added a new prop `tooltipItemRenderFunction` for HierarchySelectorComboBox component 
 
 ## 1.4.2
 * Added helpDisabled property to define, whethet Help-button is visible or not in top-bar

@@ -182,8 +182,9 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
     const count = totalCount > MAX_COUNT_OF_TOOLTIP_ITEMS ? MAX_COUNT_OF_TOOLTIP_ITEMS : totalCount;
 
     const items = this.state.selected.items.slice(0, count);
-    const elements = Object.keys(items).map(i => <p key={i}>{items[i].name}</p>);
-
+    const elements = Object.keys(items).map(i => (this.props.tooltipItemRenderFunction ?
+      this.props.tooltipItemRenderFunction(items[i], this.defaultItemRenderFunction) :
+      this.defaultItemRenderFunction(items[i])));
     if (count < totalCount) elements.push(<p key={count}>. . .</p>);
 
     return elements;
@@ -194,6 +195,8 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
   setPopoverVisibility = (isVisible) => {
     this.setState({ isPopoverVisible: isVisible });
   }
+
+  defaultItemRenderFunction = (item, key) => (<p key={key}>{item.name}</p>);
 
   isSelectedItems = () => (
     this.state.selected && this.state.selected.items && this.state.selected.items.length > 0
@@ -286,6 +289,7 @@ HierarchySelectorComboBox.propTypes = {
   viewOptions: viewOptionsType.isRequired,
   onSelect: PropTypes.func,
   onHelp: PropTypes.func,
+  tooltipItemRenderFunction: PropTypes.func,
 };
 
 HierarchySelectorComboBox.defaultProps = {
@@ -298,4 +302,5 @@ HierarchySelectorComboBox.defaultProps = {
   tooltipPlacement: 'bottom',
   onSelect: () => {},
   onHelp: () => {},
+  tooltipItemRenderFunction: null,
 };
