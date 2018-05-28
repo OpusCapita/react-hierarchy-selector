@@ -4,9 +4,11 @@
 
 ## next
 
+## 1.5.1
+
 * Updated @opuscapita/react-checkbox version
 
-# 1.5.0
+## 1.5.0
 
 * Added a new prop `tooltipItemRenderFunction` for HierarchySelectorComboBox component 
 
