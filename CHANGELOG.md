@@ -4,6 +4,9 @@
 
 ## next
 
+* Fixed tooltipItemRenderFunction parametering
+* Fixed popover searched item selection
+
 ## 1.5.1
 
 * Updated @opuscapita/react-checkbox version
