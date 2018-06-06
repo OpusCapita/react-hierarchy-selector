@@ -4,6 +4,8 @@
 
 ## next
 
+## 1.5.2
+
 * Fixed tooltipItemRenderFunction parametering
 * Fixed popover searched item selection
 
