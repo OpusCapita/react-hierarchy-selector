@@ -177,8 +177,8 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
 
     const items = this.state.selected.items.slice(0, count);
     const elements = Object.keys(items).map(i => (this.props.tooltipItemRenderFunction ?
-      this.props.tooltipItemRenderFunction(items[i], this.defaultItemRenderFunction) :
-      this.defaultItemRenderFunction(items[i])));
+      this.props.tooltipItemRenderFunction(items[i], i, this.defaultItemRenderFunction) :
+      this.defaultItemRenderFunction(items[i], i)));
     if (count < totalCount) elements.push(<p key={count}>. . .</p>);
 
     return elements;
