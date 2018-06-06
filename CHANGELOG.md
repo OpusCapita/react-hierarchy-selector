@@ -4,6 +4,8 @@
 
 ## next
 
+* Fixed popover searched item selection
+
 ## 1.5.1
 
 * Updated @opuscapita/react-checkbox version

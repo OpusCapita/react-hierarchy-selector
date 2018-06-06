@@ -121,17 +121,11 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
   onSelectedInPopover = (selectedItem) => {
     this.uncheckAllItems();
     const checkedOutput = selectedItem && Array.isArray(selectedItem.items) ?
-      selectedItem.items.map(item => ({
-        id: item.id,
-        name: item.name,
-        level: 0,
-        parentId: null,
-        parentIds: [],
-        isCheckedAll: false,
-        isChildren: false,
-      }))
-      : [];
-    this.onSelectHandler(selectedItem, checkedOutput);
+      selectedItem.items : [];
+    this.setState({
+      preCheckedItems: checkedOutput,
+    });
+    this.onSelectHandler(selectedItem.name, selectedItem, checkedOutput);
   }
 
   getInputText = () => {

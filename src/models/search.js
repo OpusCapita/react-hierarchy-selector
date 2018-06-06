@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import BaseModel from './base';
 import GroupEntity from './group.entity';
 
@@ -7,15 +8,22 @@ const isFound = (searchingIn, searchingFor) => (
   searchingIn.toLowerCase().indexOf(searchingFor.toLowerCase()) > -1
 );
 
-const findFromHierarchy = (data, searchingFor, foundData = {}, groupNames = []) => {
+const findFromHierarchy = (data, searchingFor, foundData = {}, groupNames = [], parentId = null) => {
   let result = foundData;
 
   if (data) {
-    Object.keys(data).forEach((key) => {
-      const currentItem = Object.assign({}, data[key]);
-      const isChildren = currentItem.children &&
-                        Array.isArray(currentItem.children) &&
-                        currentItem.children.length > 0;
+    data.forEach((item) => {
+      const isChildren = item.children &&
+                        Array.isArray(item.children) &&
+                        item.children.length > 0;
+      const parentIds = groupNames.map(i => i.id);
+      const currentItem = {
+        parentId,
+        parentIds,
+        isChildren,
+        isCheckedAll: isChildren,
+        ...item,
+      };
 
       if (isChildren) {
         result = findFromHierarchy(
@@ -23,9 +31,10 @@ const findFromHierarchy = (data, searchingFor, foundData = {}, groupNames = []) 
           searchingFor,
           result,
           [...groupNames, { id: currentItem.id, name: currentItem.name }],
+          currentItem.id,
         );
       } else if (currentItem.name && isFound(currentItem.name, searchingFor)) {
-        const groupId = groupNames.map(i => i.id).join('_');
+        const groupId = parentIds.join('_');
         const groupName = groupNames.map(i => i.name).join(' / ');
 
         if (result[groupId] === undefined) {
