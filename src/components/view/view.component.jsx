@@ -73,6 +73,7 @@ export default class HierarchySelectorView extends React.PureComponent {
             onCheckListChange={this.checkListChangeHandler}
             hideSingleTab
             searchPlaceHolder={this.props.searchPlaceHolder}
+            searchTooltip={this.props.searchTooltip}
           />
         </div>
         <div className="oc-hierarchy-selector-selected-container">
@@ -240,6 +241,7 @@ HierarchySelectorView.propTypes = {
   listItemRenderFunction: PropTypes.func,
   preCheckedItems: preCheckedItemsListShape,
   searchPlaceHolder: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  searchTooltip: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   selectedItemListLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   selectedItemRenderFunction: PropTypes.func,
   standalone: PropTypes.bool,
@@ -261,6 +263,7 @@ HierarchySelectorView.defaultProps = {
   listItemRenderFunction: null,
   preCheckedItems: null,
   searchPlaceHolder: 'Search...',
+  searchTooltip: null,
   selectedItemListLabel: 'Selected items',
   selectedItemRenderFunction: null,
   standalone: false,
