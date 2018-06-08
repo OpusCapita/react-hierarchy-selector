@@ -4,6 +4,8 @@
 
 ## next
 
+## 1.6.0
+
 * Made use of @opuscapita/react-searchbar
 * Updated @opuscapita/react-checkbox version
 
