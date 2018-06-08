@@ -2,12 +2,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import SearchBar from '@opuscapita/react-searchbar';
 
 import Spinner from '../spinner';
-import SearchBar from '../search-bar';
 import { dataSourceProviderType } from '../../services/types';
 import ColumnList from '../../models/column/column-list';
-import Utils from '../../utils';
 import ViewColumn from './column/column.component';
 
 export default class ViewTabContent extends React.PureComponent {
@@ -100,9 +99,12 @@ export default class ViewTabContent extends React.PureComponent {
       <div className="oc-hierarchy-selector-tab-content">
         <div className="oc-hierarchy-selector-tab-search-bar">
           <SearchBar
+            onSearch={this.searchChangeHandler}
             searchPlaceHolder={this.props.searchPlaceHolder}
-            onSearchChange={this.searchChangeHandler}
             onCloseClick={this.searchClearHandler}
+            dynamicSearchStartsFrom={3}
+            value={this.state.searchingFor}
+            tooltip={this.props.searchTooltip}
           />
         </div>
         <div className="oc-hierarchy-selector-column-wrapper">
@@ -180,15 +182,7 @@ export default class ViewTabContent extends React.PureComponent {
     this.props.onCheckListChange(checkedItemHashList);
   }
 
-  searchChangeHandler = (e) => {
-    const searchingValue = e.target ? e.target.value || '' : '';
-    let searchingFor = '';
-
-    if (Utils.enoughSearchTextLength(searchingValue)) {
-      searchingFor = searchingValue;
-    }
-    this.setState({ searchingFor });
-  }
+  searchChangeHandler = searchingFor => this.setState({ searchingFor });
 
   searchClearHandler = () => {
     this.setState({ searchingFor: '' });
@@ -234,6 +228,7 @@ ViewTabContent.propTypes = {
   listItemRenderFunction: PropTypes.func,
   dataSourceProvider: dataSourceProviderType.isRequired,
   searchPlaceHolder: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  searchTooltip: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   onCheckListChange: PropTypes.func,
 };
 
@@ -241,5 +236,6 @@ ViewTabContent.defaultProps = {
   allLabel: 'All',
   listItemRenderFunction: null,
   searchPlaceHolder: 'Search...',
+  searchTooltip: null,
   onCheckListChange: () => {},
 };

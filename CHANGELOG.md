@@ -4,6 +4,9 @@
 
 ## next
 
+* Made use of @opuscapita/react-searchbar
+* Updated @opuscapita/react-checkbox version
+
 ## 1.5.2
 
 * Fixed tooltipItemRenderFunction parametering

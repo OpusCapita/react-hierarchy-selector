@@ -69,6 +69,7 @@ export default class ViewTabs extends React.Component {
       listItemRenderFunction={this.props.listItemRenderFunction}
       dataSourceProvider={dataSourceProvider}
       searchPlaceHolder={this.props.searchPlaceHolder}
+      searchTooltip={this.props.searchTooltip}
       onCheckListChange={this.props.onCheckListChange}
     />
   )
@@ -86,6 +87,7 @@ ViewTabs.propTypes = {
   listItemRenderFunction: PropTypes.func,
   onCheckListChange: PropTypes.func,
   searchPlaceHolder: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  searchTooltip: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 };
 
 ViewTabs.defaultProps = {
@@ -93,5 +95,6 @@ ViewTabs.defaultProps = {
   hideSingleTab: false,
   listItemRenderFunction: null,
   searchPlaceHolder: 'Search...',
+  searchTooltip: null,
   onCheckListChange: () => {},
 };

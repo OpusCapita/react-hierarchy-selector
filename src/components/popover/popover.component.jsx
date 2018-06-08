@@ -3,6 +3,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import SearchBar from '@opuscapita/react-searchbar';
 
 import { dataSourceProviderType } from '../../services/types';
 import Search from '../../models/search';
@@ -14,7 +15,6 @@ import HSSelectButton from './select-btn.component';
 import PopoverSearchContent from './search/search-content.component';
 import EventHandler from './event-handlers';
 import { CLASS_NAME_SEARCH_FOCUSABLE } from './constants';
-import SearchBar from '../search-bar';
 import Utils from '../../utils';
 import './popover.scss';
 
@@ -48,15 +48,7 @@ export default class HierarchySelectorPopover extends React.PureComponent {
     if (!Utils.isFocusOnCurrentTarget(e)) this.props.onComponentBlur();
   }
 
-  onSearchChangeHandler = (e) => {
-    const searchingValue = e.target ? e.target.value || '' : '';
-    let searchingFor = '';
-
-    if (Utils.enoughSearchTextLength(searchingValue)) {
-      searchingFor = searchingValue;
-    }
-    this.setState({ searchingFor });
-  }
+  onSearchChangeHandler = searchingFor => this.setState({ searchingFor });
 
   onSelectHandler = (data) => {
     let model = null;
@@ -75,10 +67,13 @@ export default class HierarchySelectorPopover extends React.PureComponent {
 
   getSearchElement = () => (
     <SearchBar
+      onSearch={this.onSearchChangeHandler}
       inputClassName={CLASS_NAME_SEARCH_FOCUSABLE}
       searchPlaceHolder={this.props.searchPlaceHolder}
-      onSearchChange={this.onSearchChangeHandler}
       onCloseClick={this.props.onShouldClosePopover}
+      dynamicSearchStartsFrom={3}
+      value={this.state.searchingFor}
+      tooltip={this.props.searchTooltip}
     />
   );
 
@@ -130,6 +125,7 @@ HierarchySelectorPopover.propTypes = {
   onShouldClosePopover: PropTypes.func,
   btnOpenViewLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   searchPlaceHolder: PropTypes.string,
+  searchTooltip: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 };
 
 HierarchySelectorPopover.defaultProps = {
@@ -140,4 +136,5 @@ HierarchySelectorPopover.defaultProps = {
   foundItemRenderFunction: null,
   btnOpenViewLabel: 'Select...',
   searchPlaceHolder: 'Search...',
+  searchTooltip: null,
 };

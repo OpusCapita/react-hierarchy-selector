@@ -30,6 +30,7 @@ const popoverOptionsType = shape({
   btnOpenViewLabel: oneOfType([string, element]),
   foundItemRenderFunction: func,
   searchPlaceHolder: string,
+  searchTooltip: oneOfType([string, element]),
   pinnedGroupLabel: oneOfType([string, element]),
   recentGroupLabel: oneOfType([string, element]),
 });
@@ -47,6 +48,7 @@ const viewOptionsType = shape({
   groupNamePlaceHolder: string,
   listItemRenderFunction: func,
   searchPlaceHolder: oneOfType([string, element]),
+  searchTooltip: oneOfType([string, element]),
   selectedItemListLabel: oneOfType([string, element]),
   selectedItemRenderFunction: func,
   showInModal: bool,

@@ -9,7 +9,9 @@ Hierarchy selector component is a component that can be useful for selecting ite
 ### Regular
 
 - @opuscapita/oc-cm-common-styles
+- @opuscapita/react-checkbox
 - @opuscapita/react-perfect-scrollbar
+- @opuscapita/react-searchbar
 - @opuscapita/react-spinner
 - classnames
 - react-icons
@@ -267,6 +269,7 @@ Property name | Type | Required | Default value | Description
 btnOpenViewLabel | string or element | | 'Select...' | A text of open button of the component
 foundItemRenderFunction | function | | null | A custom rendering function to render the found items in hierarchy differently than by default
 searchPlaceHolder | string or element | | 'Search...' | A text of Search placeholder of the component
+searchTooltip | string or element | | null | A text of Search tooltip of the component
 pinnedGroupLabel | string or element | | 'Pinned items' | A text of Pinned items
 recentGroupLabel | string or element | | 'Recently used' | A text of Recent group
 
@@ -275,6 +278,7 @@ recentGroupLabel | string or element | | 'Recently used' | A text of Recent grou
     btnOpenViewLabel: oneOfType([string, element]),
     foundItemRenderFunction: func,
     searchPlaceHolder: string,
+    searchTooltip: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     pinnedGroupLabel: oneOfType([string, element]),
     recentGroupLabel: oneOfType([string, element]),    
   }
@@ -302,6 +306,7 @@ recentGroupLabel | string or element | | 'Recently used' | A text of Recent grou
     groupNamePlaceHolder: string,
     listItemRenderFunction: func,
     searchPlaceHolder: oneOfType([string, element]),
+    searchTooltip: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     selectedItemListLabel: oneOfType([string, element]),
     selectedItemRenderFunction: func,
     showInModal: bool,
