@@ -30,10 +30,14 @@
       font-weight: $oc-font-weight-bold;
       margin: 0 0.5rem 0.2rem 0.5rem;
       line-height: 3rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
 
-      div.right-block {
-        display: block;
-        float: right;
+      div.title-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
       }
 
       .badge {
@@ -44,6 +48,25 @@
         width: 1.5rem;
       }
     }
+
+    div.left-block {
+      min-width: 0;
+      flex-shrink: 1;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      span {
+        min-width: 0;
+      }
+    }
+
+    div.right-block {
+      flex-shrink: 0;
+      padding-left: 1rem;
+      background-color: $oc-color-white;
+    }
+
   }
 
   .component-icon {
@@ -60,13 +83,17 @@
   }
 
   .selected-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% - 2.4rem);
     cursor: default;
     font-size: $oc-font-size-normal;
     font-weight: $oc-font-weight-normal;
     margin: 0.1rem 0 0 2.4rem;
     line-height: 3rem;
     border-bottom: 1px solid $oc-color-background-aside;
-  }
+}
   .selected-item:first-child {
     border-top: 1px solid $oc-color-support-lightgray;
   }

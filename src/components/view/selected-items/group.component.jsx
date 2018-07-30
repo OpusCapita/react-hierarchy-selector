@@ -53,12 +53,16 @@ export default class GroupItem extends React.PureComponent {
 
     return (
       <li className="group-list-item" onClick={this.clickHanlder}>
-        {this.getIcon()}
-        <span>{title}</span>
-        <div className="right-block">
-          {selecteAllContent}
-          <HSBadge className="badge-orange">{count}</HSBadge>
-          {this.getRemoveIcon()}
+        <div className="title-block">
+          <div className="left-block">
+            {this.getIcon()}
+            <span>{title}</span>
+          </div>
+          <div className="right-block">
+            {selecteAllContent}
+            <HSBadge className="badge-orange">{count}</HSBadge>
+            {this.getRemoveIcon()}
+          </div>
         </div>
         {content}
       </li>
