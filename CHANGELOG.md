@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+
+## 1.6.1
 * Fixed a bug: Trash button jumps to next row (fixded item styles of a selected item list) 
 
 ## 1.6.0
