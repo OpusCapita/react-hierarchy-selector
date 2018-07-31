@@ -40,14 +40,18 @@ export default class Item extends React.PureComponent {
   }
 
   render() {
-    const { item, itemRenderFunction } = this.props;
+    const { item, itemRenderFunction, removable } = this.props;
     return (
       <div className="selected-item" onClick={this.clickHanlder}>
-        {itemRenderFunction ?
-          itemRenderFunction(Object.assign({}, item)) : this.defaultItemRenderFunction()}
-        <div className="right-block">
-          {this.getRemoveIcon()}
+        <div className="left-block">
+          {itemRenderFunction ?
+            itemRenderFunction(Object.assign({}, item)) : this.defaultItemRenderFunction()}
         </div>
+        {removable ?
+          <div className="right-block">
+            {this.getRemoveIcon()}
+          </div> : null
+        }
       </div>
     );
   }
