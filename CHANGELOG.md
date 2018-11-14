@@ -4,6 +4,9 @@
 
 ## next
 
+## 1.6.2
+* Fixed the most of dependency vulnerabilities
+
 ## 1.6.1
 * Fixed a bug: Trash button jumps to next row (fixded item styles of a selected item list) 
 
