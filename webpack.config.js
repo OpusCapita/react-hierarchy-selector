@@ -5,12 +5,10 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 const flexbugs = require('postcss-flexbugs-fixes');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const libraryName = 'react-hierarchy-selector';
 
 const isProd = process.env.NODE_ENV === 'production';
-const isAnalyzer = process.env.BUILD_ENV === 'analyser';
 
 const PATHS = {
   root: __dirname,
@@ -166,9 +164,6 @@ const devConfig = {
     new webpack.NamedModulesPlugin(),
   ],
 };
-if (isAnalyzer) {
-  devConfig.plugins.push(new BundleAnalyzerPlugin());
-}
 /*
 * PRODUCTION CONFIG
 */

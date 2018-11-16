@@ -4,6 +4,9 @@
 
 ## next
 
+## 1.6.3
+* Upgrade to latest packages
+
 ## 1.6.2
 * Fixed the most of dependency vulnerabilities
 
