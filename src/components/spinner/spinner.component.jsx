@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from '@opuscapita/react-spinner';
+import Spinner from '@opuscapita/react-spinner';
 
 const DELAY = 50;
 
