@@ -4,6 +4,9 @@
 
 ## next
 
+## 1.6.4
+* Upgrade some packages
+
 ## 1.6.3
 * Upgrade to latest packages
 
