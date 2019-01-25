@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* Added 'mainFields' property to resolve section
 
 ## 1.6.4
 * Upgrade some packages
