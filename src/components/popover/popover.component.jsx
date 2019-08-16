@@ -36,7 +36,6 @@ export default class HierarchySelectorPopover extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.mainElement.focus();
     this.mainElement.addEventListener('focusout', this.onFocusOutHandler);
   }
 
@@ -67,13 +66,18 @@ export default class HierarchySelectorPopover extends React.PureComponent {
 
   getSearchElement = () => (
     <SearchBar
-      onSearch={this.onSearchChangeHandler}
+      autoFocus
+      defaltValue={this.state.searchingFor}
       inputClassName={CLASS_NAME_SEARCH_FOCUSABLE}
-      searchPlaceHolder={this.props.searchPlaceHolder}
-      onCloseClick={this.props.onShouldClosePopover}
-      dynamicSearchStartsFrom={3}
-      value={this.state.searchingFor}
-      tooltip={this.props.searchTooltip}
+      isDynamic
+      isTooltipEnabled
+      minChars={2}
+      translations={{
+        tooltip: this.props.searchTooltip,
+        searchPlaceHolder: this.props.searchPlaceHolder,
+      }}
+      onSearch={this.onSearchChangeHandler}
+      onClear={this.props.onShouldClosePopover}
     />
   );
 

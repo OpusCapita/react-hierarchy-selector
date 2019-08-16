@@ -241,6 +241,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
       readOnly: true,
       ref: (input) => { this.inputElement = input; },
       value: this.getInputText(),
+      onClick: this.onClickHandler,
     };
 
     if (inputName.trim() !== '') {
