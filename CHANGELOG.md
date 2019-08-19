@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+
+## 1.8.0
 * Updated a version of @opuscapita/react-searchbar component.
 * Component's popup window opens by clicking anywhere on combo box.
 * Search field of a popup window gets a focus automatically, after the popup window has been opened.
