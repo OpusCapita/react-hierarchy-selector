@@ -12,6 +12,7 @@ $selector-padding: 0.5rem;
   padding: 0;
 }
 .oc-hierarchy-selector-list {
+  cursor: pointer;
   display: flex;
   width: 100%;
   border: 1px solid $oc-color-support-gray;
@@ -20,6 +21,7 @@ $selector-padding: 0.5rem;
   overflow: hidden;
 
   input {
+    cursor: pointer;
     outline: none;
     width: 100%;
     min-width: 0;
@@ -28,6 +30,7 @@ $selector-padding: 0.5rem;
     padding: 0 $selector-padding;
     border: none;
     text-overflow: ellipsis;
+    user-select: none;
     white-space: nowrap;      
   }
 
@@ -37,8 +40,8 @@ $selector-padding: 0.5rem;
   }
 
   .oc-hierarchy-selector-list-btn {
-    outline: none;
     cursor: pointer;
+    outline: none;
     box-sizing: content-box;
     display: block;
     float: right;

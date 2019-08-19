@@ -20,6 +20,12 @@ $selector-popover-padding: 0.5rem;
   border: 1px solid $oc-color-support-gray;
   z-index: 100;
 
+  .oc-search-bar {
+    height: 3.4rem;
+    min-height: 3.4rem;
+    max-height: 3.4rem;
+  }
+
   hr {
     margin-bottom: 1px;
     margin-top: 1px;
