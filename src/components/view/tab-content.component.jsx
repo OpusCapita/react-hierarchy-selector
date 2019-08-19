@@ -99,12 +99,16 @@ export default class ViewTabContent extends React.PureComponent {
       <div className="oc-hierarchy-selector-tab-content">
         <div className="oc-hierarchy-selector-tab-search-bar">
           <SearchBar
+            defaltValue={this.state.searchingFor}
+            isDynamic
+            isTooltipEnabled
+            minChars={2}
+            translations={{
+              tooltip: this.props.searchTooltip,
+              searchPlaceHolder: this.props.searchPlaceHolder,
+            }}
             onSearch={this.searchChangeHandler}
-            searchPlaceHolder={this.props.searchPlaceHolder}
-            onCloseClick={this.searchClearHandler}
-            dynamicSearchStartsFrom={3}
-            value={this.state.searchingFor}
-            tooltip={this.props.searchTooltip}
+            onClear={this.searchClearHandler}
           />
         </div>
         <div className="oc-hierarchy-selector-column-wrapper">

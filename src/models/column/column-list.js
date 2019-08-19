@@ -85,14 +85,13 @@ export default class ColumnList extends BaseModel {
   }
 
   setSearchingFor = (text) => {
-    const searchinForText = Utils.enoughSearchTextLength(text) ? text : '';
     const currentSearchingFor = searchingFor.get(this);
 
-    if (currentSearchingFor !== searchinForText) {
+    if (currentSearchingFor !== text) {
       const currentStates = getStates(this);
       currentStates.needToSearch = true;
       setStates(this, currentStates);
-      searchingFor.set(this, searchinForText);
+      searchingFor.set(this, text);
     }
   }
 

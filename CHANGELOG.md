@@ -2,7 +2,12 @@
 
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
-## next
+## <next>
+* Updated a version of @opuscapita/react-searchbar component.
+* Component's popup window opens by clicking anywhere on combo box.
+* Search field of a popup window gets a focus automatically, after the popup window has been opened.
+* Searching starts with 2 letters by default.
+* Color of "Select" button was changed to orange in View panel.
 
 ## 1.7.0
 * Added 'mainFields' property to resolve section

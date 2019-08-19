@@ -33,7 +33,7 @@ export default class Utils {
   }
 
   static enoughSearchTextLength(text) {
-    return typeof text === 'string' && text.length > 2;
+    return typeof text === 'string' && text.length > 1;
   }
 
   static uId8 = () => cx(B8);

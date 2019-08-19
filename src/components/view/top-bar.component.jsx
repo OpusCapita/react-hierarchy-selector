@@ -23,7 +23,7 @@ export default class ViewTopBar extends React.PureComponent {
           <Modal.Title>{ title }</Modal.Title>
         </div>
         <div className="action-right">
-          <Button onClick={onSelect} disabled={selectDisabled}>
+          <Button onClick={onSelect} disabled={selectDisabled} className="btn-primary">
             {btnSelectLabel}
           </Button>
           <Button onClick={onCancel}>{btnCancelLabel}</Button>
