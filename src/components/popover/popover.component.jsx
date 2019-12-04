@@ -49,7 +49,7 @@ export default class HierarchySelectorPopover extends React.PureComponent {
 
   onSearchChangeHandler = searchingFor => this.setState({ searchingFor });
 
-  onSelectHandler = (data) => {
+  onSelectHandler = (data, flags) => {
     let model = null;
 
     if (data) {
@@ -57,7 +57,7 @@ export default class HierarchySelectorPopover extends React.PureComponent {
       const items = Array.isArray(data) ? data : [data];
       model = new GroupEntity(groupName, items);
     }
-    this.props.onSelect(model);
+    this.props.onSelect(model, flags);
   }
 
   onKeyDownHanlder = (e) => {
@@ -94,7 +94,7 @@ export default class HierarchySelectorPopover extends React.PureComponent {
     return (
       <PopoverSearchContent
         foundItems={foundItems}
-        onSelect={data => this.onSelectHandler(data)}
+        onSelect={this.onSelectHandler}
         itemRenderFunction={this.props.foundItemRenderFunction}
       />
     );

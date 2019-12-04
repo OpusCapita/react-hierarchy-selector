@@ -73,7 +73,10 @@ export default class PopoverFoundItems extends React.PureComponent {
   defaultItemRenderFunction = item => (<span>{item.name}</span>);
 
   selectItem = (key) => {
-    this.props.onSelect(this.props.data[key]);
+    const flags = {
+      interactive: true,
+    };
+    this.props.onSelect(this.props.data[key], flags);
   }
 
   toggleCollapse = () => {

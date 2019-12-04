@@ -4,6 +4,10 @@
 
 ## <next>
 
+## 1.9.0
+* Add `flags` object as onSelect thirds argument.
+* Pass `interactive` flag in onSelect if change was triggered by user.
+
 ## 1.8.0
 * Updated a version of @opuscapita/react-searchbar component.
 * Component's popup window opens by clicking anywhere on combo box.
