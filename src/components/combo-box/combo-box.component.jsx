@@ -73,7 +73,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
     this.inputElement.blur();
   }
 
-  onSelectHandler = (groupName, selectedItem, checkedOutput) => {
+  onSelectHandler = (groupName, selectedItem, checkedOutput, flags) => {
     this.setState({
       selected: selectedItem,
       isPopoverVisible: false,
@@ -81,7 +81,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
     });
     const items = checkedOutput ? checkedOutput.map(item => Object.assign({}, item)) : [];
 
-    this.props.onSelect(items, groupName);
+    this.props.onSelect(items, groupName, flags);
   }
 
   onPopoverBlur = () => {
@@ -107,7 +107,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
     });
   }
 
-  onSelectedInView = (groupName, selectedItems, checkedOutput) => {
+  onSelectedInView = (groupName, selectedItems, checkedOutput, flags) => {
     const selectedItem = {
       name: groupName,
       items: selectedItems,
@@ -115,17 +115,17 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
     this.setState({
       preCheckedItems: checkedOutput,
     });
-    this.onSelectHandler(groupName, selectedItem, checkedOutput);
+    this.onSelectHandler(groupName, selectedItem, checkedOutput, flags);
   }
 
-  onSelectedInPopover = (selectedItem) => {
+  onSelectedInPopover = (selectedItem, flags) => {
     this.uncheckAllItems();
     const checkedOutput = selectedItem && Array.isArray(selectedItem.items) ?
       selectedItem.items : [];
     this.setState({
       preCheckedItems: checkedOutput,
     });
-    this.onSelectHandler(selectedItem.name, selectedItem, checkedOutput);
+    this.onSelectHandler(selectedItem.name, selectedItem, checkedOutput, flags);
   }
 
   getInputText = () => {

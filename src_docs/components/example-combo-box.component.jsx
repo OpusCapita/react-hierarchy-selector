@@ -85,8 +85,8 @@ export default class ExampleComboBox extends React.PureComponent {
           listItemRenderFunction: this.listItemRenderFunction,
           helpDisabled: !helpEnabled,
         }}
-        onSelect={(selectedItems, groupName) => {
-          console.log(groupName, selectedItems);
+        onSelect={(selectedItems, groupName, flags) => {
+          console.log(groupName, selectedItems, flags);
         }}
         {...precheckedOptions}
         {...helpOptions}

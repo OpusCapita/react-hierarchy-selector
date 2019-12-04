@@ -6,11 +6,17 @@ import FaQuestion from 'react-icons/lib/fa/question-circle';
 import './top-bar.scss';
 
 export default class ViewTopBar extends React.PureComponent {
+  handleSelectClick = () => {
+    const flags = {
+      interactive: true,
+    };
+    this.props.onSelect(flags);
+  }
+
   render() {
     const {
       title,
       onCancel,
-      onSelect,
       onHelp,
       selectDisabled,
       btnSelectLabel,
@@ -23,11 +29,19 @@ export default class ViewTopBar extends React.PureComponent {
           <Modal.Title>{ title }</Modal.Title>
         </div>
         <div className="action-right">
-          <Button onClick={onSelect} disabled={selectDisabled} className="btn-primary">
+          <Button
+            onClick={this.handleSelectClick}
+            disabled={selectDisabled}
+            className="btn-primary"
+          >
             {btnSelectLabel}
           </Button>
           <Button onClick={onCancel}>{btnCancelLabel}</Button>
-          <button type="button" className={`oc-help-button${helpDisabled ? '-disabled' : ''}`} onClick={onHelp}>
+          <button
+            type="button"
+            className={`oc-help-button${helpDisabled ? '-disabled' : ''}`}
+            onClick={onHelp}
+          >
             <FaQuestion />
           </button>
         </div>

@@ -19,7 +19,7 @@ export default class PopoverSearchContent extends React.PureComponent {
               key={foundItems[key].name}
               groupName={foundItems[key].name}
               data={foundItems[key].items}
-              onSelect={data => this.props.onSelect(data)}
+              onSelect={this.props.onSelect}
               itemRenderFunction={this.props.itemRenderFunction}
             />
           ))}

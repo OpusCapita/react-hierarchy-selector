@@ -148,14 +148,14 @@ export default class HierarchySelectorView extends React.PureComponent {
     this.props.onCancel();
   }
 
-  selectHandler = () => {
+  selectHandler = (flags) => {
     if (this.state.groupName.trim() === '') throw new Error('State groupName is empty');
 
     const allCheckedItems = this.getAllCheckedItems();
     const checkedOutput = this.getCheckedOutput();
 
     this.props
-      .onSelect(this.state.groupName, allCheckedItems, checkedOutput);
+      .onSelect(this.state.groupName, allCheckedItems, checkedOutput, flags);
   }
 
   checkListChangeHandler = (checkedItemHashList) => {
