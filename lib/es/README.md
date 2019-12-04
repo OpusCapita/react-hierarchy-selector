@@ -61,7 +61,7 @@ where id, name and children are required properties. The last level of hierarchy
 
 ### Checked items
 
-Here is a data structure that components `HierarchySelectorView` and `HierarchySelectorComboBox` return within callback functions `onCheckListChanged` and onSelect and contains checked items:
+Here is a data structure that components `HierarchySelectorView` and `HierarchySelectorComboBox` return within callback functions `onCheckListChanged` and `onSelect` and contains checked items:
 
 ```json
 [
@@ -228,7 +228,7 @@ tooltipItemRenderFunction | function | | null | A custom rendering function to r
 
 Here is a list of HierarchySelectorComboBox callback functions.
 
-- __onSelect (items, groupName)__ &mdash; Function is called when a user has selected items in the popover panel or in HierarchySelectorView component.
+- __onSelect (items, groupName, flags)__ &mdash; Function is called when a user has selected items in the popover panel or in HierarchySelectorView component.
   - Parameter `items` is an array and contains information about items, that were selected in the popover panel or in HierarchySelectorView component
   - Data structure of `items` parameter:
 ```json
@@ -246,6 +246,8 @@ Here is a list of HierarchySelectorComboBox callback functions.
 ```
 is the same as in `onCheckListChanged` callback function of View component. For an item that is selected from a popover the value of level attribute is 0 (zero).
   - Parameter `groupName` is a string that contains a group name user entered in a group name field of HierarchySelectorView component 
+  - Parameter `flags` is object containing information flags
+    - `interactive` flag is true when onSelect was initiated by user interaction, not for example preCheckedItems prop change.
 
 ## Types
 
