@@ -4,6 +4,10 @@
 
 ## <next>
 
+## 1.9.1
+* Fix npm package content, include only necessary files.
+* Update docs to new format
+
 ## 1.9.0
 * Add `flags` object as onSelect thirds argument.
 * Pass `interactive` flag in onSelect if change was triggered by user.
