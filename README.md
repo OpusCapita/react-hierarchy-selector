@@ -343,5 +343,5 @@ recentGroupLabel | string or element | | 'Recently used' | A text of Recent grou
 
 For a usage see example's source code: 
 
-- [HierarchySelectorView component](../src_docs/components/example-view.component.jsx)
-- [HierarchySelectorComboBox component](../src_docs/components/example-combo-box.component.jsx)
+- [HierarchySelectorView component](./src_docs/components/example-view.component.jsx)
+- [HierarchySelectorComboBox component](./src_docs/components/example-combo-box.component.jsx)
