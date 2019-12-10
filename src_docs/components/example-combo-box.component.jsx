@@ -27,11 +27,13 @@ export default class ExampleComboBox extends React.PureComponent {
   static propTypes = {
     usePrechecked: PropTypes.bool,
     helpEnabled: PropTypes.bool,
+    isClearable: PropTypes.bool,
   }
 
   static defaultProps = {
     usePrechecked: false,
     helpEnabled: false,
+    isClearable: false,
   }
 
   constructor(props) {
@@ -45,7 +47,7 @@ export default class ExampleComboBox extends React.PureComponent {
   }
 
   render() {
-    const { usePrechecked, helpEnabled } = this.props;
+    const { usePrechecked, helpEnabled, isClearable } = this.props;
     const { dataSourceProvider, dataSourceProviderPrecheckedItems } = this.state;
     let precheckedOptions = {};
     let helpOptions = {};
@@ -68,6 +70,7 @@ export default class ExampleComboBox extends React.PureComponent {
         dataSourceProvider={dataSourceProvider}
         hideOnPopoverBlur={false}
         popoverVisible={false}
+        isClearable={isClearable}
         popoverOptions={{
           btnOpenViewLabel: 'Select items...',
           searchPlaceHolder: 'Search for an item...',

@@ -4,6 +4,7 @@ import React from 'react';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
+import FaClose from 'react-icons/lib/fa/close';
 import { dataSourceProviderType } from '../../services/types';
 import { preCheckedItemsListShape, popoverOptionsType, viewOptionsType } from '../../types';
 import Spinner from '../spinner';
@@ -128,6 +129,14 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
     this.onSelectHandler(selectedItem.name, selectedItem, checkedOutput, flags);
   }
 
+  onClearHandler = () => {
+    const groupName = '';
+    const selectedItem = [];
+    const checkedOutput = [];
+    const flags = { interactive: true };
+    this.onSelectHandler(groupName, selectedItem, checkedOutput, flags);
+  }
+
   getInputText = () => {
     let selectionText = '';
 
@@ -151,6 +160,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
         onHelp={this.props.onHelp}
         groupName={this.state.selected ? this.state.selected.name : ''}
         preCheckedItems={preCheckedItems}
+        isClearable={this.props.isClearable}
       />
     );
   }
@@ -259,9 +269,27 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
             <input {...inputOptions} />
             {this.state.needToLoadData ?
               <Spinner /> :
-              <HSBadge className="badge-orange">{this.getCountOfSelectedItems()}</HSBadge>
+              <React.Fragment>
+                <HSBadge className="badge-orange">{this.getCountOfSelectedItems()}</HSBadge>
+                {this.props.isClearable && (
+                  <button
+                    type="reset"
+                    className="oc-hierarchy-selector-list-clear-btn"
+                    onClick={this.onClearHandler}
+                  >
+                    <FaClose />
+                  </button>
+                )}
+              </React.Fragment>
             }
-            <button type="button" disabled={this.state.needToLoadData} className="oc-hierarchy-selector-list-btn" onClick={this.onClickHandler}><FaChevronDown /></button>
+            <button
+              type="button"
+              disabled={this.state.needToLoadData}
+              className="oc-hierarchy-selector-list-btn"
+              onClick={this.onClickHandler}
+            >
+              <FaChevronDown />
+            </button>
           </div>
         </OverlayTrigger>
         { this.state.isPopoverVisible ? this.getPopover() : null }
@@ -285,12 +313,13 @@ HierarchySelectorComboBox.propTypes = {
   onSelect: PropTypes.func,
   onHelp: PropTypes.func,
   tooltipItemRenderFunction: PropTypes.func,
+  isClearable: PropTypes.bool,
 };
 
 HierarchySelectorComboBox.defaultProps = {
   hideOnPopoverBlur: true,
   inputName: '',
-  noSelectionText: 'No one selected...',
+  noSelectionText: 'Nothing selected...',
   popoverVisible: false,
   preCheckedItems: null,
   preCheckedGroupName: 'Default group',
@@ -298,4 +327,5 @@ HierarchySelectorComboBox.defaultProps = {
   onSelect: () => {},
   onHelp: () => {},
   tooltipItemRenderFunction: null,
+  isClearable: false,
 };

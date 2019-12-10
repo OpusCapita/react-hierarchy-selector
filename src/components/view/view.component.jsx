@@ -97,6 +97,9 @@ export default class HierarchySelectorView extends React.PureComponent {
   }
 
   getCanSelectStatus = (groupName, lists) => {
+    if (this.props.isClearable) {
+      return true;
+    }
     const isGroupName = String(groupName).trim() !== '';
     let count = 0;
     Object.keys(lists).forEach((key) => {
@@ -246,6 +249,7 @@ HierarchySelectorView.propTypes = {
   selectedItemRenderFunction: PropTypes.func,
   standalone: PropTypes.bool,
   helpDisabled: PropTypes.bool,
+  isClearable: PropTypes.bool,
 };
 
 HierarchySelectorView.defaultProps = {
@@ -269,4 +273,5 @@ HierarchySelectorView.defaultProps = {
   standalone: false,
   title: '',
   helpDisabled: true,
+  isClearable: false,
 };
