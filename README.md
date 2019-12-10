@@ -337,6 +337,7 @@ recentGroupLabel | string or element | | 'Recently used' | A text of Recent grou
     selectedItemRenderFunction: func,
     showInModal: bool,
     title: oneOfType([string, element]).isRequired,
+    hideGroupNameInput: bool,
   }
 ```
 

@@ -6,6 +6,7 @@
 
 ## 1.10.0
 * Add `isClearable` prop to allow clearing of selected values.
+* Add option to hide group name input
 
 ## 1.9.1
 * Fix npm package content, include only necessary files.

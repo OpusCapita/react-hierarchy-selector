@@ -53,6 +53,7 @@ const viewOptionsType = shape({
   selectedItemRenderFunction: func,
   showInModal: bool,
   title: oneOfType([string, element]).isRequired,
+  hideGroupNameInput: bool,
 });
 
 export {

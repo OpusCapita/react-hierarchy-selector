@@ -130,11 +130,31 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
   }
 
   onClearHandler = () => {
-    const groupName = '';
-    const selectedItem = [];
-    const checkedOutput = [];
+    const groupName = null;
+    const selectedItem = null;
+    const checkedOutput = null;
     const flags = { interactive: true };
     this.onSelectHandler(groupName, selectedItem, checkedOutput, flags);
+  }
+
+  getClearButton = () => {
+    if (
+      !this.props.isClearable
+      || !this.state.selected
+      || !this.state.selected.items
+      || !this.state.selected.items.length
+    ) {
+      return null;
+    }
+    return (
+      <button
+        type="reset"
+        className="oc-hierarchy-selector-list-clear-btn"
+        onClick={this.onClearHandler}
+      >
+        <FaClose />
+      </button>
+    );
   }
 
   getInputText = () => {
@@ -271,15 +291,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
               <Spinner /> :
               <React.Fragment>
                 <HSBadge className="badge-orange">{this.getCountOfSelectedItems()}</HSBadge>
-                {this.props.isClearable && (
-                  <button
-                    type="reset"
-                    className="oc-hierarchy-selector-list-clear-btn"
-                    onClick={this.onClearHandler}
-                  >
-                    <FaClose />
-                  </button>
-                )}
+                {this.getClearButton()}
               </React.Fragment>
             }
             <button
