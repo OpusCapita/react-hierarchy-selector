@@ -130,10 +130,11 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
   }
 
   onClearHandler = () => {
-    const groupName = null;
-    const selectedItem = null;
-    const checkedOutput = null;
+    const groupName = '';
+    const selectedItem = [];
+    const checkedOutput = [];
     const flags = { interactive: true };
+    this.uncheckAllItems();
     this.onSelectHandler(groupName, selectedItem, checkedOutput, flags);
   }
 
@@ -278,6 +279,8 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
       inputOptions.name = inputName;
     }
 
+    const isBusy = this.props.isBusy || this.state.needToLoadData;
+
     return (
       <div className="oc-hierarchy-selector-list-wrapper">
         <OverlayTrigger
@@ -287,7 +290,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
         >
           <div className="oc-hierarchy-selector-list">
             <input {...inputOptions} />
-            {this.state.needToLoadData ?
+            {isBusy ?
               <Spinner /> :
               <React.Fragment>
                 <HSBadge className="badge-orange">{this.getCountOfSelectedItems()}</HSBadge>
@@ -296,7 +299,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
             }
             <button
               type="button"
-              disabled={this.state.needToLoadData}
+              disabled={isBusy}
               className="oc-hierarchy-selector-list-btn"
               onClick={this.onClickHandler}
             >
@@ -326,6 +329,7 @@ HierarchySelectorComboBox.propTypes = {
   onHelp: PropTypes.func,
   tooltipItemRenderFunction: PropTypes.func,
   isClearable: PropTypes.bool,
+  isBusy: PropTypes.bool,
 };
 
 HierarchySelectorComboBox.defaultProps = {
@@ -340,4 +344,5 @@ HierarchySelectorComboBox.defaultProps = {
   onHelp: () => {},
   tooltipItemRenderFunction: null,
   isClearable: false,
+  isBusy: false,
 };

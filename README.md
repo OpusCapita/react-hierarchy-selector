@@ -247,6 +247,7 @@ viewOptions               | viewOptionsType          | yes      |         | Defi
 onSelect                  | function                 |          | _&lt;empty function&gt;_ | A callback function that is called when user has selected items in the popover panel or in HierarchySelectorView component.
 tooltipItemRenderFunction | function                 |          | null    | A custom rendering function to render tooltip list items differently than by default. The function has two parameters: first represents the current selected item for rendering and second one key attribute for item.
 isClearable               | boolean                  |          | false   | Allow clearing of selected value, renders 'X' to dropdown element. Enable Select button when nothing is selected.
+isBusy                    | boolean                  |          | false   | Let component know if it should show spinner and disable actions
 
 #### Callback functions
 
