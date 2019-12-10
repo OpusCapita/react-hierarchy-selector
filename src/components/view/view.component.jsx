@@ -77,7 +77,7 @@ export default class HierarchySelectorView extends React.PureComponent {
           />
         </div>
         <div className="oc-hierarchy-selector-selected-container">
-          {!this.props.standalone &&
+          {(!this.props.standalone && !this.props.hideGroupNameInput) &&
           <GroupName
             label={this.props.groupNameLabel}
             placeHolder={this.props.groupNamePlaceHolder}
@@ -97,6 +97,9 @@ export default class HierarchySelectorView extends React.PureComponent {
   }
 
   getCanSelectStatus = (groupName, lists) => {
+    if (this.props.isClearable) {
+      return true;
+    }
     const isGroupName = String(groupName).trim() !== '';
     let count = 0;
     Object.keys(lists).forEach((key) => {
@@ -246,6 +249,8 @@ HierarchySelectorView.propTypes = {
   selectedItemRenderFunction: PropTypes.func,
   standalone: PropTypes.bool,
   helpDisabled: PropTypes.bool,
+  hideGroupNameInput: PropTypes.bool,
+  isClearable: PropTypes.bool,
 };
 
 HierarchySelectorView.defaultProps = {
@@ -269,4 +274,6 @@ HierarchySelectorView.defaultProps = {
   standalone: false,
   title: '',
   helpDisabled: true,
+  hideGroupNameInput: false,
+  isClearable: false,
 };

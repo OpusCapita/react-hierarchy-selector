@@ -232,20 +232,21 @@ This component looks like a combo-box and starts to load data after a user click
 
 #### Properties
 
-Property name | Type | Required | Default value | Description
----|---|:---:|---|---
-dataSourceProvider | dataSourceProviderType |	yes | | Data provider for the component
-hideOnPopoverBlur | boolean | | true | The property defines whether a popover panel of this component should be closed on blur event. If true, then the popover will be closed after blur event was triggered.
-inputName |	string | | _&lt;empty string&gt;_ | The property defines Name property of DOM input element that contains a group name of selected items.
-noSelectionText |	string | | 'No one selected...'	| The property defines a text that will appear in the combo box as a placeholder of an input element and in a tooltip when no one element was selected.
-popoverOptions | popoverOptionsType | yes | | Defines options for the popover panel of the combo box component (see popoverOptionsType for more information).
-popoverVisible | boolean | | false | Defines whether the popover panel should be opened from the start.
-preCheckedGroupName |	string | | Default group | Defines group name for pre-checked items (will be shown as a combo box text). If there are no pre-checked items this property is not used
-preCheckedItems |	preCheckedItemsListShape | | null |	Defines pre-checked items for the view
-tooltipPlacement | string | | 'bottom' | Defines a placement for a tooltip and should contain one of the values described for OverlayTrigger component of  React-Bootstrap framework (property placement)
-viewOptions | viewOptionsType |	yes	| | Defines options for the HierarchySelectorView component (see viewOptionsType and HierarchySelectorView for more information).
-onSelect | function | |	_&lt;empty function&gt;_ | A callback function that is called when user has selected items in the popover panel or in HierarchySelectorView component.
-tooltipItemRenderFunction | function | | null | A custom rendering function to render tooltip list items differently than by default. The function has two parameters: first represents the current selected item for rendering and second one key attribute for item.
+Property name             | Type                     | Required | Default | Description
+--------------------------|--------------------------|----------|---------|---
+dataSourceProvider        | dataSourceProviderType   | yes      |         | Data provider for the component
+hideOnPopoverBlur         | boolean                  |          | true    | The property defines whether a popover panel of this component should be closed on blur event. If true, then the popover will be closed after blur event was triggered.
+inputName                 | string                   |          | _&lt;empty string&gt;_ | The property defines Name property of DOM input element that contains a group name of selected items.
+noSelectionText           | string                   |          | 'Nothing selected...' | The property defines a text that will appear in the combo box as a placeholder of an input element and in a tooltip when no element is selected.
+popoverOptions            | popoverOptionsType       | yes      |         | Defines options for the popover panel of the combo box component (see popoverOptionsType for more information).
+popoverVisible            | boolean                  |          | false   | Defines whether the popover panel should be opened from the start.
+preCheckedGroupName       | string                   |          | Default group | Defines group name for pre-checked items (will be shown as a combo box text). If there are no pre-checked items this property is not used
+preCheckedItems           | preCheckedItemsListShape |          | null    | Defines pre-checked items for the view
+tooltipPlacement          | string                   |          | 'bottom' | Defines a placement for a tooltip and should contain one of the values described for OverlayTrigger component of  React-Bootstrap framework (property placement)
+viewOptions               | viewOptionsType          | yes      |         | Defines options for the HierarchySelectorView component (see viewOptionsType and HierarchySelectorView for more information).
+onSelect                  | function                 |          | _&lt;empty function&gt;_ | A callback function that is called when user has selected items in the popover panel or in HierarchySelectorView component.
+tooltipItemRenderFunction | function                 |          | null    | A custom rendering function to render tooltip list items differently than by default. The function has two parameters: first represents the current selected item for rendering and second one key attribute for item.
+isClearable               | boolean                  |          | false   | Allow clearing of selected value, renders 'X' to dropdown element. Enable Select button when nothing is selected.
 
 #### Callback functions
 
@@ -336,6 +337,7 @@ recentGroupLabel | string or element | | 'Recently used' | A text of Recent grou
     selectedItemRenderFunction: func,
     showInModal: bool,
     title: oneOfType([string, element]).isRequired,
+    hideGroupNameInput: bool,
   }
 ```
 
