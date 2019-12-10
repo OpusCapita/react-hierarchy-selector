@@ -49,7 +49,12 @@ export default class ExampleComboBox extends React.PureComponent {
   }
 
   render() {
-    const { usePrechecked, helpEnabled, isClearable, viewOptions } = this.props;
+    const {
+      usePrechecked,
+      helpEnabled,
+      isClearable,
+      viewOptions,
+    } = this.props;
     const { dataSourceProvider, dataSourceProviderPrecheckedItems } = this.state;
     let precheckedOptions = {};
     let helpOptions = {};
