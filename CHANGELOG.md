@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Add `isBusy` prop to allow control when component should be in busy state
+* Bugfix: Disable select button if items are selected but group name is empty
 
 ## 1.10.0
 * Add `isClearable` prop to allow clearing of selected values.

@@ -97,14 +97,16 @@ export default class HierarchySelectorView extends React.PureComponent {
   }
 
   getCanSelectStatus = (groupName, lists) => {
-    if (this.props.isClearable) {
-      return true;
-    }
+    const { isClearable } = this.props;
     const isGroupName = String(groupName).trim() !== '';
     let count = 0;
     Object.keys(lists).forEach((key) => {
       count += lists[key].getCheckedItemsCount();
     });
+
+    if (isClearable && count === 0) {
+      return true;
+    }
 
     return isGroupName && count > 0;
   }
@@ -152,13 +154,18 @@ export default class HierarchySelectorView extends React.PureComponent {
   }
 
   selectHandler = (flags) => {
-    if (this.state.groupName.trim() === '') throw new Error('State groupName is empty');
+    const { onSelect } = this.props;
+    const { groupName } = this.state;
 
     const allCheckedItems = this.getAllCheckedItems();
     const checkedOutput = this.getCheckedOutput();
 
-    this.props
-      .onSelect(this.state.groupName, allCheckedItems, checkedOutput, flags);
+    // If there's selected items, groupName can't be empty
+    if (allCheckedItems && allCheckedItems.length > 0 && groupName.trim() === '') {
+      throw new Error('State groupName is empty');
+    }
+
+    onSelect(groupName, allCheckedItems, checkedOutput, flags);
   }
 
   checkListChangeHandler = (checkedItemHashList) => {
