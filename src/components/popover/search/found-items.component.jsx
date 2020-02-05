@@ -6,8 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactList from 'react-list';
-import FaCaretRight from 'react-icons/lib/fa/caret-right';
-import FaCaretDown from 'react-icons/lib/fa/caret-down';
+import { FaCaretRight, FaCaretDown } from 'react-icons/fa';
 
 import { hierarchyItemListShape } from '../../../types';
 import { CLASS_NAME_SEARCH_FOCUSABLE } from '../constants';

@@ -296,7 +296,7 @@ Property name | Type | Required | Default value | Description
 btnOpenViewLabel | string or element | | 'Select...' | A text of open button of the component
 foundItemRenderFunction | function | | null | A custom rendering function to render the found items in hierarchy differently than by default
 searchPlaceHolder | string or element | | 'Search...' | A text of Search placeholder of the component
-searchTooltip | string or element | | null | A text of Search tooltip of the component
+searchTooltip | string or element | | null | A text of Search tooltip of the component, tooltip disabled if null
 pinnedGroupLabel | string or element | | 'Pinned items' | A text of Pinned items
 recentGroupLabel | string or element | | 'Recently used' | A text of Recent group
 

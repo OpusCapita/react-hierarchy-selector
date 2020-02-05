@@ -1,6 +1,7 @@
 import React from 'react';
 import Checkbox from '@opuscapita/react-checkbox';
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 
 import SelectableList from '../../selectable-list';
 import ColumnData from '../../../models/column/column-data';
@@ -10,6 +11,7 @@ import './column.scss';
 export default class ViewColumn extends React.PureComponent {
   constructor(props) {
     super(props);
+    this.id = shortid();
     this.state = {
       checkedAll: this.props.checkedAll,
     };
@@ -31,8 +33,8 @@ export default class ViewColumn extends React.PureComponent {
     this.props.onCheck(this.props.referenceIds.slice(), id, checkState);
   }
 
-  checkAllHandler = () => {
-    const newState = !this.state.checkedAll;
+  checkAllHandler = (e) => {
+    const newState = e.target.checked;
     this.props.onCheckAll(this.props.referenceIds.slice(), newState);
     this.setState({
       checkedAll: newState,
@@ -50,6 +52,8 @@ export default class ViewColumn extends React.PureComponent {
         <div className="oc-hierarchy-selector-column-all">
           {!this.props.checkedAllHidden ?
             <Checkbox
+              id={`oc-hierarchy-selector-select-all-${this.id}`}
+              name={`oc-hierarchy-selector-select-all-${this.id}`}
               onChange={this.checkAllHandler}
               checked={this.state.checkedAll}
               label={this.props.allLabel}

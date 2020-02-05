@@ -42,10 +42,22 @@
 
       .badge {
         margin: 0 1.5rem 0 0.5rem;
+        padding-top: 0px;
+        padding-bottom: 0px;
       }
-
-      svg {
-        width: 1.5rem;
+      .left-block {
+        svg {
+          position: relative;
+          top: 4px;
+          width: 1.8rem;
+          height: 1.8rem;
+        }
+      }
+      .right-block {
+        svg {
+          padding-top: 2px;
+          width: 1.2rem;
+        }
       }
     }
 
@@ -55,7 +67,6 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
-
       span {
         min-width: 0;
       }

@@ -39,16 +39,9 @@ $list-item-padding: 0.5rem;
         text-align: left;
         font-size: $check-icon-height;
 
-        i {
-          position: absolute;
-          top: 50%;
-          margin-top: -$check-icon-height/2;
-          overflow: hidden;
-          white-space: nowrap;
-
-          &.disabled {
-            color: $oc-color-support-gray;
-          }
+        svg {
+          position: relative;
+          top: 2px;
         }
       }
       

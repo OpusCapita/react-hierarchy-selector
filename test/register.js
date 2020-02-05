@@ -1,5 +1,5 @@
-require('babel-register')({
-  ignore: /node_modules/,
+require('@babel/register')({
+  ignore: [/node_modules/],
 });
 require('ignore-styles');
 require('raf/polyfill');

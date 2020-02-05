@@ -4,9 +4,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import FaTrash from 'react-icons/lib/fa/trash';
-import FaCaretRight from 'react-icons/lib/fa/caret-right';
-import FaCaretDown from 'react-icons/lib/fa/caret-down';
+import { FaTrashAlt, FaCaretRight, FaCaretDown } from 'react-icons/fa';
 
 import HSBadge from '../../badge';
 
@@ -23,7 +21,7 @@ export default class GroupItem extends React.PureComponent {
   getRemoveIcon() {
     return this.props.removable ?
       <span className="component-icon clickable" onClick={this.removeClickHandler}>
-        <FaTrash />
+        <FaTrashAlt />
       </span>
       : null;
   }

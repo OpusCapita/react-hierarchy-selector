@@ -3,6 +3,11 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Close selected items tooltip when popover is opened
+* Add 500ms delay to selected items tooltip
+* Disable searchbar tooltip if `searchTooltip` is null
+* Upgrade to babel 7 and webpack 4
+* Upgrade to latest packages packages
 
 ## 1.11.0
 * Add `isBusy` prop to allow control when component should be in busy state
