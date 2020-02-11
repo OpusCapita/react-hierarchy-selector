@@ -1,7 +1,7 @@
 {
   "author": "OpusCapita (www.opuscapita.com)",
   "name": "@opuscapita/react-hierarchy-selector",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "private": false,
   "license": "MIT",
   "description": "React component for selecting items from hierarchies",
