@@ -3,9 +3,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import FaCheckSquareO from 'react-icons/lib/fa/check-square-o';
-import FaCheckSquare from 'react-icons/lib/fa/check-square';
-import FaSquareO from 'react-icons/lib/fa/square-o';
+import { FaCheckSquare, FaRegCheckSquare, FaRegSquare } from 'react-icons/fa';
 
 export default class ItemCheckbox extends React.PureComponent {
   constructor(props) {
@@ -26,9 +24,9 @@ export default class ItemCheckbox extends React.PureComponent {
   getIcon = () => {
     let icon = null;
     if (this.state.checked) {
-      icon = this.props.disabled ? <FaCheckSquareO /> : <FaCheckSquare />;
+      icon = this.props.disabled ? <FaCheckSquare /> : <FaRegCheckSquare />;
     } else if (!this.state.checked && !this.props.disabled) {
-      icon = <FaSquareO />;
+      icon = <FaRegSquare />;
     }
 
     return icon;

@@ -12,7 +12,7 @@ const hotConfig = {
   resolve: {
     alias: {
       react: path.resolve('./node_modules/react'),
-      'react-dom': path.resolve('./node_modules/react-dom'),
+      'react-dom': path.resolve('./node_modules/@hot-loader/react-dom'),
       'react-redux': path.resolve('./node_modules/react-redux'),
     },
   },
@@ -29,11 +29,4 @@ const hotConfig = {
   },
 };
 
-const mergedConfig = merge(devConfig, hotConfig);
-mergedConfig.entry = [
-  'babel-polyfill',
-  'react-hot-loader/patch',
-  devConfig.entry[1],
-];
-
-module.exports = mergedConfig;
+module.exports = merge(devConfig, hotConfig);

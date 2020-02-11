@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Button } from 'react-bootstrap';
-import FaQuestion from 'react-icons/lib/fa/question-circle';
+import { FaQuestion } from 'react-icons/fa';
 
 import './top-bar.scss';
 

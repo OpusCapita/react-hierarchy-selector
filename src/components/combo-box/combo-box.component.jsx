@@ -3,8 +3,7 @@
 import React from 'react';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import FaChevronDown from 'react-icons/lib/fa/chevron-down';
-import FaClose from 'react-icons/lib/fa/close';
+import { FaCaretDown, FaCaretUp, FaTimes } from 'react-icons/fa';
 import { dataSourceProviderType } from '../../services/types';
 import { preCheckedItemsListShape, popoverOptionsType, viewOptionsType } from '../../types';
 import Spinner from '../spinner';
@@ -153,7 +152,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
         className="oc-hierarchy-selector-list-clear-btn"
         onClick={this.onClearHandler}
       >
-        <FaClose />
+        <FaTimes />
       </button>
     );
   }
@@ -197,6 +196,49 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
       onShouldClosePopover={this.onShouldClosePopover}
       {...options}
     />);
+  }
+
+  getHierarchySelector = () => {
+    const { inputName } = this.props;
+    const isBusy = this.props.isBusy || this.state.needToLoadData;
+
+    const inputOptions = {
+      onFocus: this.onInputFocus,
+      type: 'text',
+      placeholder: this.props.noSelectionText,
+      readOnly: true,
+      ref: (input) => { this.inputElement = input; },
+      value: this.getInputText(),
+      onClick: this.onClickHandler,
+    };
+
+    if (inputName.trim() !== '') {
+      inputOptions.name = inputName;
+    }
+
+    return (
+      <div className="oc-hierarchy-selector-list">
+        <input {...inputOptions} />
+        {isBusy ?
+          <Spinner /> :
+          <React.Fragment>
+            <HSBadge className="badge-orange">{this.getCountOfSelectedItems()}</HSBadge>
+            {this.getClearButton()}
+          </React.Fragment>
+        }
+        <button
+          type="button"
+          disabled={isBusy}
+          className="oc-hierarchy-selector-list-btn"
+          onClick={this.onClickHandler}
+        >
+          { this.state.isPopoverVisible
+            ? <FaCaretUp />
+            : <FaCaretDown />
+          }
+        </button>
+      </div>
+    );
   }
 
   getToolTip = content => <Tooltip id="tooltip" className="hs-combo-box-tooltip">{content}</Tooltip>;
@@ -264,23 +306,16 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
   }
 
   render() {
-    const { inputName } = this.props;
-    const inputOptions = {
-      onFocus: this.onInputFocus,
-      type: 'text',
-      placeholder: this.props.noSelectionText,
-      readOnly: true,
-      ref: (input) => { this.inputElement = input; },
-      value: this.getInputText(),
-      onClick: this.onClickHandler,
-    };
-
-    if (inputName.trim() !== '') {
-      inputOptions.name = inputName;
+    // If popover is visible, don't show tooltip (overlay)
+    if (this.state.isPopoverVisible) {
+      return (
+        <div className="oc-hierarchy-selector-list-wrapper">
+          { this.getHierarchySelector() }
+          { this.state.isPopoverVisible ? this.getPopover() : null }
+          { this.state.isViewVisible ? this.getView() : null }
+        </div>
+      );
     }
-
-    const isBusy = this.props.isBusy || this.state.needToLoadData;
-
     return (
       <div className="oc-hierarchy-selector-list-wrapper">
         <OverlayTrigger
@@ -288,24 +323,7 @@ export default class HierarchySelectorComboBox extends React.PureComponent {
           placement={this.props.tooltipPlacement}
           overlay={this.getToolTip(this.getDefaultToolTipContent())}
         >
-          <div className="oc-hierarchy-selector-list">
-            <input {...inputOptions} />
-            {isBusy ?
-              <Spinner /> :
-              <React.Fragment>
-                <HSBadge className="badge-orange">{this.getCountOfSelectedItems()}</HSBadge>
-                {this.getClearButton()}
-              </React.Fragment>
-            }
-            <button
-              type="button"
-              disabled={isBusy}
-              className="oc-hierarchy-selector-list-btn"
-              onClick={this.onClickHandler}
-            >
-              <FaChevronDown />
-            </button>
-          </div>
+          { this.getHierarchySelector() }
         </OverlayTrigger>
         { this.state.isPopoverVisible ? this.getPopover() : null }
         { this.state.isViewVisible ? this.getView() : null }

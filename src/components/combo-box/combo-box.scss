@@ -42,12 +42,11 @@ $selector-padding: 0.5rem;
   .oc-hierarchy-selector-list-btn, .oc-hierarchy-selector-list-clear-btn {
     cursor: pointer;
     outline: none;
-    box-sizing: content-box;
-    display: block;
-    float: right;
-    height: $selector-line-height;
-    line-height: $selector-line-height;
-    padding: 0 $selector-padding;
+    box-sizing: border-box;
+    display: inline-block;
+    // float: right;
+    height: 18px;
+    padding: 2px $selector-padding 0;
     background-color: $oc-color-white;
     border: 0px solid transparent;
     overflow: hidden;
@@ -55,6 +54,11 @@ $selector-padding: 0.5rem;
 
     &:hover {
       color: $oc-color-main;
+    }
+
+    .badge {
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 

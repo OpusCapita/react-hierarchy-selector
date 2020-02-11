@@ -101,7 +101,7 @@ export default class ViewTabContent extends React.PureComponent {
           <SearchBar
             defaltValue={this.state.searchingFor}
             isDynamic
-            isTooltipEnabled
+            isTooltipEnabled={!!this.props.searchTooltip}
             minChars={2}
             translations={{
               tooltip: this.props.searchTooltip,

@@ -3,14 +3,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import FaTrash from 'react-icons/lib/fa/trash';
+import { FaTrashAlt } from 'react-icons/fa';
 import { hierarchyItemShape } from '../../../types';
 
 export default class Item extends React.PureComponent {
   getRemoveIcon() {
     return this.props.removable ?
       <span className="component-icon clickable" onClick={this.removeClickHandler}>
-        <FaTrash />
+        <FaTrashAlt />
       </span>
       : null;
   }

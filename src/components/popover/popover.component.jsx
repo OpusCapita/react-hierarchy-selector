@@ -70,7 +70,7 @@ export default class HierarchySelectorPopover extends React.PureComponent {
       defaltValue={this.state.searchingFor}
       inputClassName={CLASS_NAME_SEARCH_FOCUSABLE}
       isDynamic
-      isTooltipEnabled
+      isTooltipEnabled={!!this.props.searchTooltip}
       minChars={2}
       translations={{
         tooltip: this.props.searchTooltip,
