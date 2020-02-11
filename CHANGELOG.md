@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+
+## 1.12.0
 * Close selected items tooltip when popover is opened
 * Add 500ms delay to selected items tooltip
 * Disable searchbar tooltip if `searchTooltip` is null
