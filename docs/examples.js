@@ -1201,7 +1201,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 var isFound = function isFound(searchingIn, searchingFor) {
-  return searchingIn.toLowerCase().indexOf(searchingFor.toLowerCase()) > -1;
+  return searchingIn && searchingIn.toLowerCase && searchingFor && searchingFor.toLowerCase && searchingIn.toLowerCase().indexOf(searchingFor.toLowerCase()) > -1;
 };
 
 var search_findFromHierarchy = function findFromHierarchy(data, searchingFor, foundData, groupNames, parentId) {
