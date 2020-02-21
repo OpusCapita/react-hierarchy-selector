@@ -5,7 +5,11 @@ import GroupEntity from './group.entity';
 import Utils from '../utils';
 
 const isFound = (searchingIn, searchingFor) => (
-  searchingIn.toLowerCase().indexOf(searchingFor.toLowerCase()) > -1
+  searchingIn
+  && searchingIn.toLowerCase
+  && searchingFor
+  && searchingFor.toLowerCase
+  && searchingIn.toLowerCase().indexOf(searchingFor.toLowerCase()) > -1
 );
 
 const findFromHierarchy = (data, searchingFor, foundData = {}, groupNames = [], parentId = null) => {

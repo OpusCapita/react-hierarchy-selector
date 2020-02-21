@@ -4,6 +4,9 @@
 
 ## <next>
 
+## 1.12.1
+* Fix bug: Search crashes if item has no name
+
 ## 1.12.0
 * Close selected items tooltip when popover is opened
 * Add 500ms delay to selected items tooltip
