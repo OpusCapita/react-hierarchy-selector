@@ -9,9 +9,9 @@ const TIMEOUT = 200;
 
 const getPrechecked = () => (
   [
-    { id: 521, parentId: 10, isCheckedAll: false },
-    { id: 525, parentId: 10, isCheckedAll: false },
+    { id: 1, isCheckedAll: true },
     { id: 2, isCheckedAll: true },
+    { id: 3, isCheckedAll: true },
   ]
 );
 

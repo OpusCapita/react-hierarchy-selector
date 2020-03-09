@@ -26,6 +26,7 @@ export default function getData() {
       getItem(21, 'Others', companiesOthers),
     ]),
     getItem(2, 'Some other groups', getItemList(5000, 25, 'Other companies and units')),
+    getItem(3, 'Big group', getItemList(6000, 8000, 'Another companies')),
   ];
 
   return general;
