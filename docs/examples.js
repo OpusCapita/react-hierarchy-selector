@@ -4070,7 +4070,7 @@ function getItemList(startFrom, number, label) {
 function getData() {
   var companiesEU = getItemList(500, 1000, 'Company EU');
   var companiesOthers = getItemList(2000, 500, 'Company');
-  var general = [getItem(1, 'General group', [getItem(10, 'EU', companiesEU), getItem(21, 'Others', companiesOthers)]), getItem(2, 'Some other groups', getItemList(5000, 25, 'Other companies and units'))];
+  var general = [getItem(1, 'General group', [getItem(10, 'EU', companiesEU), getItem(21, 'Others', companiesOthers)]), getItem(2, 'Some other groups', getItemList(5000, 25, 'Other companies and units')), getItem(3, 'Big group', getItemList(6000, 8000, 'Another companies'))];
   return general;
 }
 // CONCATENATED MODULE: ./components/example-combo-box.component.jsx
@@ -4089,15 +4089,13 @@ var TIMEOUT = 200;
 
 var getPrechecked = function getPrechecked() {
   return [{
-    id: 521,
-    parentId: 10,
-    isCheckedAll: false
-  }, {
-    id: 525,
-    parentId: 10,
-    isCheckedAll: false
+    id: 1,
+    isCheckedAll: true
   }, {
     id: 2,
+    isCheckedAll: true
+  }, {
+    id: 3,
     isCheckedAll: true
   }];
 };
